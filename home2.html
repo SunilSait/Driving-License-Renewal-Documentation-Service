@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en" id="root-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DriveSure Premium — Explore our full suite of driving license renewal and documentation services with faster processing, bento-style service showcase, and transparent pricing.">
+    <title>Home 2 — Premium | DriveSure License & Documentation</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Home 2 specific additions */
+        .doc-preview-section {
+            background: var(--bg-body);
+            padding: 5rem 0;
+        }
+        .doc-preview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .doc-preview-img {
+            border-radius: var(--radius-3xl);
+            overflow: hidden;
+            position: relative;
+        }
+        .doc-preview-img img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        .doc-preview-badge {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--secondary);
+            color: var(--primary);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.4rem 0.875rem;
+            border-radius: var(--radius-full);
+        }
+        .doc-checklist-preview {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+        .doc-check-item {
+            display: flex;
+            align-items: center;
+            gap: 0.875rem;
+            padding: 0.875rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-default);
+            border-radius: var(--radius-lg);
+            transition: var(--transition-fast);
+        }
+        .doc-check-item:hover {
+            border-color: var(--secondary);
+            background: var(--secondary-light);
+        }
+        .dark .doc-check-item:hover { background: rgba(201,162,39,0.06); }
+        .doc-check-item i { color: var(--green); font-size: 1rem; flex-shrink: 0; }
+        .doc-check-item span { font-size: 0.9rem; font-weight: 500; color: var(--text-heading); }
+
+        .partners-section {
+            padding: 3.5rem 0;
+            background: var(--bg-surface);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .dark .partners-section { border-color: var(--border-default); }
+        .partners-label {
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+        .partners-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        .partner-name {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            opacity: 0.55;
+            transition: var(--transition-fast);
+            letter-spacing: -0.02em;
+        }
+        .partner-name:hover { opacity: 1; color: var(--primary); }
+        .dark .partner-name:hover { color: var(--secondary); }
+
+        @media (max-width: 768px) {
+            .doc-preview-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .doc-preview-img img { height: 280px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<div id="main-nav"></div>
+
+<!-- ========== HERO — CENTERED WITH RINGS ========== -->
+<section class="hero-h2">
+    <!-- Animated rings background -->
+    <div class="hero-h2-rings" aria-hidden="true">
+        <div class="hero-h2-ring hero-h2-ring-1"></div>
+        <div class="hero-h2-ring hero-h2-ring-2"></div>
+        <div class="hero-h2-ring hero-h2-ring-3"></div>
+    </div>
+    <div class="hero-h2-glow" aria-hidden="true"></div>
+
+    <div class="hero-h2-content animate-on-scroll">
+        <div class="hero-h2-eyebrow">
+            <i class="fas fa-certificate"></i>
+            Premium Documentation Service
+        </div>
+        <h1>Your License, Our Responsibility</h1>
+        <p>Expert-led, government-approved driving license and vehicle documentation services. Renew, update, and apply — faster than ever before.</p>
+
+        <div class="hero-h2-cta">
+            <a href="contact.html" class="btn btn-primary btn-lg">
+                <i class="fas fa-calendar-check"></i> Book Appointment
+            </a>
+            <a href="documents.html" class="btn btn-outline-light btn-lg">
+                View Checklists
+            </a>
+        </div>
+
+        <!-- Bento Grid -->
+        <div class="bento-grid">
+            <!-- Large card — License Renewal -->
+            <div class="bento-card bento-large">
+                <div style="height:180px;overflow:hidden;">
+                    <img src="assets/images/hero-main.jpg" alt="License renewal service" class="bento-card-img" onerror="this.parentElement.style.background='linear-gradient(135deg,rgba(30,58,95,0.4),rgba(201,162,39,0.2))'; this.style.display='none';">
+                </div>
+                <div class="bento-card-body">
+                    <h4><i class="fas fa-rotate" style="color:var(--secondary);margin-right:0.5rem;"></i> License Renewal</h4>
+                    <p>Complete renewal for LMV, HMV, and commercial licenses. 3–5 day processing.</p>
+                </div>
+            </div>
+
+            <!-- Large card — RC Renewal -->
+            <div class="bento-card bento-large">
+                <div style="height:180px;overflow:hidden;">
+                    <img src="assets/images/hero-rto.jpg" alt="RC renewal service" class="bento-card-img" onerror="this.parentElement.style.background='linear-gradient(135deg,rgba(30,58,95,0.3),rgba(201,162,39,0.15))'; this.style.display='none';">
+                </div>
+                <div class="bento-card-body">
+                    <h4><i class="fas fa-car" style="color:var(--secondary);margin-right:0.5rem;"></i> RC Renewal</h4>
+                    <p>Registration certificate renewal for all vehicle types. Doorstep collection available.</p>
+                </div>
+            </div>
+
+            <!-- Stat — Clients -->
+            <div class="bento-card bento-medium bento-stat-card">
+                <span class="bento-stat-num" data-count="12500" data-suffix="+">0+</span>
+                <span class="bento-stat-label">Happy Clients</span>
+            </div>
+
+            <!-- Stat — Success Rate -->
+            <div class="bento-card bento-medium bento-stat-card">
+                <span class="bento-stat-num" data-count="98" data-suffix="%">0%</span>
+                <span class="bento-stat-label">Success Rate</span>
+            </div>
+
+            <!-- Stat — Days -->
+            <div class="bento-card bento-medium bento-stat-card">
+                <span class="bento-stat-num" data-count="3" data-suffix=" Days">0</span>
+                <span class="bento-stat-label">Avg Processing</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FEATURES GRID (6 Cards, 3-Col) ========== -->
+<section class="features-section">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label"><i class="fas fa-bolt"></i> Key Features</div>
+            <h2>Why DriveSure Stands Apart</h2>
+            <p>We combine deep RTO expertise with modern service delivery to give you the smoothest documentation experience.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon"><i class="fas fa-user-shield"></i></div>
+                <h4>Government Approved</h4>
+                <p>All our processes are compliant with Motor Vehicles Act provisions and RTO regulations.</p>
+            </div>
+            <div class="feature-card animate-on-scroll animate-delay-1">
+                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                <h4>Express Processing</h4>
+                <p>Urgent renewals completed in 24–48 hours through our priority submission channel.</p>
+            </div>
+            <div class="feature-card animate-on-scroll animate-delay-2">
+                <div class="feature-icon"><i class="fas fa-truck-fast"></i></div>
+                <h4>Doorstep Delivery</h4>
+                <p>Your renewed documents are dispatched via speed post directly to your registered address.</p>
+            </div>
+            <div class="feature-card animate-on-scroll animate-delay-3">
+                <div class="feature-icon"><i class="fas fa-magnifying-glass-check"></i></div>
+                <h4>Pre-Submission Review</h4>
+                <p>Every document is reviewed by our experts before RTO submission to prevent rejections.</p>
+            </div>
+            <div class="feature-card animate-on-scroll animate-delay-4">
+                <div class="feature-icon"><i class="fas fa-message"></i></div>
+                <h4>Live Status Updates</h4>
+                <p>Track your application in real-time with SMS and email notifications at each milestone.</p>
+            </div>
+            <div class="feature-card animate-on-scroll animate-delay-5">
+                <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                <h4>Dedicated Support</h4>
+                <p>Your personal agent is just a call away throughout the entire documentation journey.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== STEPS — HORIZONTAL ========== -->
+<section class="steps-section">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label"><i class="fas fa-route"></i> Process</div>
+            <h2>Four Simple Steps to Your Renewed License</h2>
+        </div>
+
+        <div class="steps-row animate-on-scroll">
+            <div class="step-item">
+                <div class="step-circle">1</div>
+                <h4>Book Online</h4>
+                <p>Choose your service and fill the quick booking form. Slots available 7 days a week.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-circle">2</div>
+                <h4>Submit Documents</h4>
+                <p>Drop off at our office or request our free pickup service from your location.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-circle">3</div>
+                <h4>We Process</h4>
+                <p>Our team submits at the RTO and follows up at every stage on your behalf.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-circle">4</div>
+                <h4>Get Delivered</h4>
+                <p>Receive your renewed license at your doorstep — no RTO visit needed!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== DOCUMENT PREVIEW ========== -->
+<section class="doc-preview-section">
+    <div class="container">
+        <div class="doc-preview-grid">
+            <div class="doc-preview-img animate-on-scroll">
+                <img src="assets/images/hero-license.jpg" alt="Driving license documents checklist" loading="lazy" onerror="this.parentElement.classList.add('img-placeholder'); this.style.display='none'; this.parentElement.innerHTML+='<i class=\'fas fa-file-alt\' style=\'font-size:4rem;\'></i>'">
+                <span class="doc-preview-badge"><i class="fas fa-download"></i> Free Download</span>
+            </div>
+            <div class="animate-on-scroll animate-delay-1">
+                <div class="section-label"><i class="fas fa-file-text"></i> Documents</div>
+                <h2>Know Exactly What Documents You Need</h2>
+                <p>No more confusion at the RTO counter. Download our complete, service-specific document checklists and arrive fully prepared.</p>
+                <div class="doc-checklist-preview">
+                    <div class="doc-check-item">
+                        <i class="fas fa-circle-check"></i>
+                        <span>Driving License Renewal — 6 documents</span>
+                    </div>
+                    <div class="doc-check-item">
+                        <i class="fas fa-circle-check"></i>
+                        <span>Address Change — 4 documents</span>
+                    </div>
+                    <div class="doc-check-item">
+                        <i class="fas fa-circle-check"></i>
+                        <span>RC Renewal — 5 documents</span>
+                    </div>
+                    <div class="doc-check-item">
+                        <i class="fas fa-circle-check"></i>
+                        <span>International Driving Permit — 7 documents</span>
+                    </div>
+                </div>
+                <a href="documents.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-download"></i> View All Checklists
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== PRICING TEASER ========== -->
+<section class="pricing-section">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label"><i class="fas fa-tag"></i> Service Packages</div>
+            <h2>Simple, Transparent Pricing</h2>
+            <p>Choose the service package that fits your need. No hidden fees, ever.</p>
+        </div>
+
+        <div class="pricing-grid animate-on-scroll">
+            <!-- Basic -->
+            <div class="pricing-card">
+                <h3>Basic</h3>
+                <p style="font-size:0.875rem;color:var(--text-muted);">License Renewal</p>
+                <div class="price">₹499</div>
+                <p class="price-note">+ Govt. Fees</p>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> Document checklist</li>
+                    <li><i class="fas fa-check"></i> Form filling assistance</li>
+                    <li><i class="fas fa-check"></i> RTO submission</li>
+                    <li><i class="fas fa-check"></i> Status updates</li>
+                </ul>
+                <a href="contact.html" class="btn btn-secondary w-full">Get Started</a>
+            </div>
+            <!-- Popular -->
+            <div class="pricing-card popular">
+                <span class="pricing-badge">Most Popular</span>
+                <h3>Standard</h3>
+                <p style="font-size:0.875rem;color:var(--text-muted);">Renewal + Delivery</p>
+                <div class="price">₹799</div>
+                <p class="price-note">+ Govt. Fees</p>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> All Basic features</li>
+                    <li><i class="fas fa-check"></i> Document pickup</li>
+                    <li><i class="fas fa-check"></i> Doorstep delivery</li>
+                    <li><i class="fas fa-check"></i> Dedicated agent</li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary w-full">Book Now</a>
+            </div>
+            <!-- Premium -->
+            <div class="pricing-card">
+                <h3>Express</h3>
+                <p style="font-size:0.875rem;color:var(--text-muted);">Priority Processing</p>
+                <div class="price">₹1299</div>
+                <p class="price-note">+ Govt. Fees</p>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> All Standard features</li>
+                    <li><i class="fas fa-check"></i> 24–48hr processing</li>
+                    <li><i class="fas fa-check"></i> Priority queue</li>
+                    <li><i class="fas fa-check"></i> 24/7 support</li>
+                </ul>
+                <a href="contact.html" class="btn btn-secondary w-full">Get Started</a>
+            </div>
+        </div>
+
+        <p style="text-align:center;margin-top:1.5rem;font-size:0.875rem;color:var(--text-muted);">
+            <i class="fas fa-circle-info" style="color:var(--secondary);"></i>
+            Government fees are paid separately at the RTO and are not included in the above pricing.
+            <a href="fees.html" style="color:var(--secondary);font-weight:600;margin-left:0.375rem;">See full fee breakdown →</a>
+        </p>
+    </div>
+</section>
+
+<!-- ========== TESTIMONIALS MARQUEE ========== -->
+<section class="testimonials-marquee">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label"><i class="fas fa-quote-left"></i> Reviews</div>
+            <h2>Voices of Our Happy Clients</h2>
+        </div>
+    </div>
+
+    <div style="overflow:hidden;padding:0.5rem 0;">
+        <div class="marquee-track">
+            <!-- Cards x2 for seamless loop -->
+            <div class="marquee-card">
+                <div class="marquee-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="marquee-text">"Renewed my license without stepping out of home. Truly impressive service!"</p>
+                <div class="marquee-author">
+                    <div style="width:38px;height:38px;border-radius:50%;background:var(--primary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-user" style="color:var(--primary);"></i></div>
+                    <div><span class="marquee-name">Anitha R.</span><span class="marquee-loc">Chennai</span></div>
+                </div>
+            </div>
+            <div class="marquee-card">
+                <div class="marquee-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="marquee-text">"Got my IDP in 2 days for my Europe trip. Excellent and knowledgeable team!"</p>
+                <div class="marquee-author">
+                    <div style="width:38px;height:38px;border-radius:50%;background:var(--secondary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-user" style="color:var(--secondary);"></i></div>
+                    <div><span class="marquee-name">Karthik M.</span><span class="marquee-loc">Coimbatore</span></div>
+                </div>
+            </div>
+            <div class="marquee-card">
+                <div class="marquee-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="marquee-text">"RC renewal was smooth and fast. Pickup and delivery at my home — zero hassle."</p>
+                <div class="marquee-author">
+                    <div style="width:38px;height:38px;border-radius:50%;background:var(--primary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-user" style="color:var(--primary);"></i></div>
+                    <div><span class="marquee-name">Pradeep V.</span><span class="marquee-loc">Madurai</span></div>
+                </div>
+            </div>
+            <div class="marquee-card">
+                <div class="marquee-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i></div>
+                <p class="marquee-text">"Address change on my license done in 3 days. Very professional and honest team."</p>
+                <div class="marquee-author">
+                    <div style="width:38px;height:38px;border-radius:50%;background:var(--secondary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-user" style="color:var(--secondary);"></i></div>
+                    <div><span class="marquee-name">Sudha L.</span><span class="marquee-loc">Salem</span></div>
+                </div>
+            </div>
+            <div class="marquee-card">
+                <div class="marquee-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="marquee-text">"Perfect service! They handled everything. Didn't need to visit the RTO even once."</p>
+                <div class="marquee-author">
+                    <div style="width:38px;height:38px;border-radius:50%;background:var(--primary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-user" style="color:var(--primary);"></i></div>
+                    <div><span class="marquee-name">Ramesh N.</span><span class="marquee-loc">Trichy</span></div>
+                </div>
+            </div>
+            <!-- Duplicate for loop -->
+            <div class="marquee-card">
+                <div class="marquee-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="marquee-text">"Renewed my license without stepping out of home. Truly impressive service!"</p>
+                <div class="marquee-author">
+                    <div style="width:38px;height:38px;border-radius:50%;background:var(--primary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-user" style="color:var(--primary);"></i></div>
+                    <div><span class="marquee-name">Anitha R.</span><span class="marquee-loc">Chennai</span></div>
+                </div>
+            </div>
+            <div class="marquee-card">
+                <div class="marquee-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="marquee-text">"Got my IDP in 2 days for my Europe trip. Excellent and knowledgeable team!"</p>
+                <div class="marquee-author">
+                    <div style="width:38px;height:38px;border-radius:50%;background:var(--secondary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-user" style="color:var(--secondary);"></i></div>
+                    <div><span class="marquee-name">Karthik M.</span><span class="marquee-loc">Coimbatore</span></div>
+                </div>
+            </div>
+            <div class="marquee-card">
+                <div class="marquee-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="marquee-text">"RC renewal was smooth and fast. Pickup and delivery at my home — zero hassle."</p>
+                <div class="marquee-author">
+                    <div style="width:38px;height:38px;border-radius:50%;background:var(--primary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-user" style="color:var(--primary);"></i></div>
+                    <div><span class="marquee-name">Pradeep V.</span><span class="marquee-loc">Madurai</span></div>
+                </div>
+            </div>
+            <div class="marquee-card">
+                <div class="marquee-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i></div>
+                <p class="marquee-text">"Address change on my license done in 3 days. Very professional and honest team."</p>
+                <div class="marquee-author">
+                    <div style="width:38px;height:38px;border-radius:50%;background:var(--secondary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-user" style="color:var(--secondary);"></i></div>
+                    <div><span class="marquee-name">Sudha L.</span><span class="marquee-loc">Salem</span></div>
+                </div>
+            </div>
+            <div class="marquee-card">
+                <div class="marquee-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="marquee-text">"Perfect service! They handled everything. Didn't need to visit the RTO even once."</p>
+                <div class="marquee-author">
+                    <div style="width:38px;height:38px;border-radius:50%;background:var(--primary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-user" style="color:var(--primary);"></i></div>
+                    <div><span class="marquee-name">Ramesh N.</span><span class="marquee-loc">Trichy</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== STATS BAR ========== -->
+<div class="stats-bar">
+    <div class="container">
+        <div class="stats-bar-inner">
+            <div class="stats-bar-item">
+                <span class="stats-bar-num" data-count="12500" data-suffix="+">0+</span>
+                <span class="stats-bar-label">Licenses Renewed</span>
+            </div>
+            <div class="stats-bar-item">
+                <span class="stats-bar-num" data-count="98" data-suffix="%">0%</span>
+                <span class="stats-bar-label">Success Rate</span>
+            </div>
+            <div class="stats-bar-item">
+                <span class="stats-bar-num" data-count="8" data-suffix="+ Yrs">0</span>
+                <span class="stats-bar-label">In Business</span>
+            </div>
+            <div class="stats-bar-item">
+                <span class="stats-bar-num" data-count="5">0</span>
+                <span class="stats-bar-label">RTO Tie-ups</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ========== PARTNERS ========== -->
+<section class="partners-section">
+    <div class="container">
+        <div class="partners-label">Recognized & Authorized By</div>
+        <div class="partners-row">
+            <span class="partner-name">Ministry of Road Transport</span>
+            <span class="partner-name">State RTO Authority</span>
+            <span class="partner-name">National Automobile Club</span>
+            <span class="partner-name">Federation of Motor Vehicle</span>
+            <span class="partner-name">DigiLocker Approved</span>
+        </div>
+    </div>
+</section>
+
+<!-- ========== CTA — GLASSMORPHISM ========== -->
+<section class="cta-glass-section">
+    <div class="container">
+        <div class="cta-glass-card animate-on-scroll">
+            <div class="section-label" style="color:var(--secondary);background:rgba(201,162,39,0.12);border-color:rgba(201,162,39,0.25);margin-bottom:1.25rem;">
+                <i class="fas fa-rocket"></i> Get Started Today
+            </div>
+            <h2>Stop Waiting, Start Renewing</h2>
+            <p>Join thousands of satisfied clients who trust DriveSure for their most important documents. Book your appointment in under 2 minutes.</p>
+            <div class="cta-btns">
+                <a href="contact.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-calendar-check"></i> Book Appointment
+                </a>
+                <a href="fees.html" class="btn btn-outline-light btn-lg">
+                    View Fees
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<div id="main-footer"></div>
+
+<script src="components.js"></script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" id="root-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact DriveSure — Book an appointment for driving license renewal, address change, RC renewal, or international driving permit. We're here to help.">
+    <title>Contact Us | DriveSure License & Documentation</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<div id="main-nav"></div>
+
+<!-- ========== INNER HERO ========== -->
+<section class="hero-inner">
+    <div class="hero-inner-bg">
+        <img src="assets/images/hero-main.jpg" alt="" aria-hidden="true" loading="eager">
+    </div>
+    <div class="hero-inner-overlay"></div>
+    <div class="container hero-inner-content animate-on-scroll">
+        <div class="section-label" style="background:rgba(201,162,39,0.15);border-color:rgba(201,162,39,0.3);color:var(--secondary);margin-bottom:1rem;">
+            <i class="fas fa-calendar-check"></i> Get in Touch
+        </div>
+        <h1>Contact & Book Appointment</h1>
+        <p>Schedule your appointment or reach out with questions. Our team responds within 30 minutes during business hours.</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="sep">›</span>
+            <span class="current">Contact Us</span>
+        </nav>
+    </div>
+</section>
+
+<!-- ========== CONTACT SECTION ========== -->
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-grid">
+
+            <!-- LEFT: Booking Form -->
+            <div>
+                <div class="booking-form-card animate-on-scroll">
+                    <h3>Book Your Appointment</h3>
+                    <p>Fill in your details below and we'll confirm your slot within 30 minutes.</p>
+
+                    <form id="booking-form" onsubmit="handleBookingSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="first-name">First Name *</label>
+                                <input type="text" id="first-name" class="form-input" placeholder="Your first name" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="last-name">Last Name *</label>
+                                <input type="text" id="last-name" class="form-input" placeholder="Your last name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email Address *</label>
+                            <input type="email" id="email" class="form-input" placeholder="your@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" class="form-input" placeholder="+91 98765 43210" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="service">Service Required *</label>
+                            <select id="service" class="form-select" required>
+                                <option value="" disabled selected>Select a service</option>
+                                <option value="dl-renewal">Driving License Renewal</option>
+                                <option value="address-change">Address Change on DL</option>
+                                <option value="rc-renewal">RC Renewal</option>
+                                <option value="idp">International Driving Permit</option>
+                                <option value="duplicate-dl">Duplicate DL</option>
+                                <option value="name-correction">Name Correction on DL</option>
+                                <option value="add-vehicle-class">Add Vehicle Class</option>
+                                <option value="other">Other / Not Sure</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="preferred-date">Preferred Appointment Date *</label>
+                            <input type="date" id="preferred-date" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="preferred-time">Preferred Time Slot</label>
+                            <select id="preferred-time" class="form-select">
+                                <option value="" disabled selected>Select time slot</option>
+                                <option>9:00 AM – 11:00 AM</option>
+                                <option>11:00 AM – 1:00 PM</option>
+                                <option>2:00 PM – 4:00 PM</option>
+                                <option>4:00 PM – 6:00 PM</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="message">Additional Message or Notes</label>
+                            <textarea id="message" class="form-textarea" placeholder="Any special requirements, queries, or details about your license..."></textarea>
+                        </div>
+
+                        <div style="display:flex;align-items:center;gap:0.625rem;margin-bottom:1.5rem;">
+                            <input type="checkbox" id="agree-terms" style="accent-color:var(--secondary);" required>
+                            <label for="agree-terms" style="font-size:0.875rem;cursor:pointer;">
+                                I agree to the <a href="#" style="color:var(--secondary);font-weight:600;">Terms of Service</a> and <a href="#" style="color:var(--secondary);font-weight:600;">Privacy Policy</a>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-full btn-lg" id="submit-btn">
+                            <i class="fas fa-calendar-check"></i> Confirm Appointment
+                        </button>
+                    </form>
+
+                    <!-- Success message (hidden) -->
+                    <div id="success-msg" style="display:none;text-align:center;padding:2rem;">
+                        <div style="width:72px;height:72px;background:rgba(16,185,129,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
+                            <i class="fas fa-circle-check" style="font-size:2rem;color:var(--green);"></i>
+                        </div>
+                        <h3>Appointment Request Sent!</h3>
+                        <p style="margin-top:0.5rem;">Thank you! Our team will confirm your slot within 30 minutes via phone or email.</p>
+                        <a href="index.html" class="btn btn-secondary" style="margin-top:1.5rem;">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Contact Info -->
+            <div class="contact-info-side animate-on-scroll animate-delay-2">
+
+                <!-- Contact Details -->
+                <div class="contact-info-card">
+                    <h4><i class="fas fa-address-book"></i> Contact Information</h4>
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon"><i class="fas fa-phone"></i></div>
+                        <div class="contact-detail-text">
+                            <strong>Phone (Primary)</strong>
+                            <span>+91 98765 43210</span>
+                        </div>
+                    </div>
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon"><i class="fas fa-phone"></i></div>
+                        <div class="contact-detail-text">
+                            <strong>Phone (WhatsApp)</strong>
+                            <span>+91 87654 32109</span>
+                        </div>
+                    </div>
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-detail-text">
+                            <strong>Email</strong>
+                            <span>info@drivesure.in</span>
+                        </div>
+                    </div>
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon"><i class="fas fa-location-dot"></i></div>
+                        <div class="contact-detail-text">
+                            <strong>Office Address</strong>
+                            <span>42, Anna Salai, 2nd Floor, Chennai – 600 002, Tamil Nadu</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Office Hours -->
+                <div class="contact-info-card">
+                    <h4><i class="fas fa-clock"></i> Office Hours</h4>
+                    <div class="office-hours-grid">
+                        <div class="office-hours-row">
+                            <span class="day">Monday – Friday</span>
+                            <span class="time">9:00 AM – 6:00 PM</span>
+                        </div>
+                        <div class="office-hours-row">
+                            <span class="day">Saturday</span>
+                            <span class="time">9:00 AM – 4:00 PM</span>
+                        </div>
+                        <div class="office-hours-row">
+                            <span class="day">Sunday</span>
+                            <span class="closed">Closed</span>
+                        </div>
+                        <div class="office-hours-row">
+                            <span class="day">Government Holidays</span>
+                            <span class="closed">Closed</span>
+                        </div>
+                    </div>
+                    <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border-light);">
+                        <p style="font-size:0.8125rem;color:var(--text-muted);font-weight:400;">
+                            <i class="fas fa-circle" style="color:var(--green);font-size:0.625rem;margin-right:0.375rem;"></i>
+                            WhatsApp queries answered until 8:00 PM on weekdays.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="map-embed contact-info-card" style="padding:0;">
+                    <div style="padding:1rem 1.25rem;border-bottom:1px solid var(--border-default);">
+                        <h4 style="margin:0;"><i class="fas fa-map-location-dot"></i> &nbsp;Find Our Office</h4>
+                    </div>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.7!2d80.2707!3d13.0827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDA0JzU3LjciTiA4MMKwMTYnMTQuNSJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="DriveSure Office Location — 42 Anna Salai Chennai">
+                    </iframe>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="contact-info-card" style="background:var(--primary);border-color:var(--primary);">
+                    <h4 style="color:#fff;"><i class="fas fa-bolt"></i> Quick Actions</h4>
+                    <div style="display:flex;flex-direction:column;gap:0.625rem;margin-top:0.5rem;">
+                        <a href="documents.html" class="btn btn-outline-light" style="justify-content:flex-start;">
+                            <i class="fas fa-file-alt"></i> View Document Checklists
+                        </a>
+                        <a href="fees.html" class="btn btn-outline-light" style="justify-content:flex-start;">
+                            <i class="fas fa-tag"></i> Check Service Fees
+                        </a>
+                        <a href="services.html" class="btn btn-primary" style="justify-content:flex-start;background:var(--secondary);border-color:var(--secondary);color:var(--primary);">
+                            <i class="fas fa-layer-group"></i> Explore All Services
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ========== WHY CONTACT US ========== -->
+<section style="background:var(--bg-surface);padding:4rem 0;">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label"><i class="fas fa-star"></i> Our Promise</div>
+            <h2>When You Reach Out to Us</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;" class="animate-on-scroll">
+            <div class="card" style="text-align:center;">
+                <div style="width:52px;height:52px;background:var(--primary-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+                    <i class="fas fa-reply" style="color:var(--primary);font-size:1.125rem;"></i>
+                </div>
+                <h4>30-Min Response</h4>
+                <p style="font-size:0.875rem;margin-top:0.375rem;">We respond to every query within 30 minutes during business hours — by phone or email.</p>
+            </div>
+            <div class="card" style="text-align:center;">
+                <div style="width:52px;height:52px;background:var(--primary-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+                    <i class="fas fa-user-shield" style="color:var(--primary);font-size:1.125rem;"></i>
+                </div>
+                <h4>Dedicated Agent</h4>
+                <p style="font-size:0.875rem;margin-top:0.375rem;">Every client gets a dedicated service agent who handles your case from start to finish.</p>
+            </div>
+            <div class="card" style="text-align:center;">
+                <div style="width:52px;height:52px;background:var(--primary-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+                    <i class="fas fa-shield-halved" style="color:var(--primary);font-size:1.125rem;"></i>
+                </div>
+                <h4>No Hidden Charges</h4>
+                <p style="font-size:0.875rem;margin-top:0.375rem;">Full fee transparency upfront. You're informed of every cost before we begin your application.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<div id="main-footer"></div>
+
+<script src="components.js"></script>
+<script>
+    // Set minimum date for appointment to today
+    document.addEventListener('DOMContentLoaded', function () {
+        const dateInput = document.getElementById('preferred-date');
+        if (dateInput) {
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.setAttribute('min', today);
+        }
+    });
+
+    function handleBookingSubmit(e) {
+        e.preventDefault();
+        const form = document.getElementById('booking-form');
+        const successMsg = document.getElementById('success-msg');
+        if (form && successMsg) {
+            form.style.display = 'none';
+            successMsg.style.display = 'block';
+        }
+    }
+</script>
+</body>
+</html>

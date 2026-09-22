@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" id="root-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documents Required for Driving License Renewal, Address Change, RC Renewal, and International Driving Permit — downloadable checklists for each service.">
+    <title>Documents Required | DriveSure License & Documentation</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<div id="main-nav"></div>
+
+<!-- ========== INNER HERO ========== -->
+<section class="hero-inner">
+    <div class="hero-inner-bg">
+        <img src="assets/images/hero-rto.jpg" alt="" aria-hidden="true" loading="eager">
+    </div>
+    <div class="hero-inner-overlay"></div>
+    <div class="container hero-inner-content animate-on-scroll">
+        <div class="section-label" style="background:rgba(201,162,39,0.15);border-color:rgba(201,162,39,0.3);color:var(--secondary);margin-bottom:1rem;">
+            <i class="fas fa-file-text"></i> Documents
+        </div>
+        <h1>Documents Required</h1>
+        <p>Complete, service-specific document checklists to ensure your application is never rejected. Download and arrive fully prepared.</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="sep">›</span>
+            <span class="current">Documents Required</span>
+        </nav>
+    </div>
+</section>
+
+<!-- ========== INFO BANNER ========== -->
+<div style="background:var(--secondary-light);border-bottom:2px solid rgba(201,162,39,0.25);padding:1rem 0;">
+    <div class="container">
+        <div style="display:flex;align-items:center;gap:0.75rem;justify-content:center;flex-wrap:wrap;text-align:center;">
+            <i class="fas fa-circle-info" style="color:var(--secondary);font-size:1.125rem;flex-shrink:0;"></i>
+            <p style="font-size:0.9rem;font-weight:500;color:var(--primary);margin:0;">
+                All documents must be submitted as <strong>self-attested photocopies</strong> along with originals for verification. Bring 2 recent passport-size photographs to every appointment.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- ========== DOCUMENTS SECTION ========== -->
+<section class="documents-section">
+    <div class="container">
+
+        <!-- Tab Nav -->
+        <div class="doc-tabs animate-on-scroll" role="tablist" aria-label="Service document tabs">
+            <button class="doc-tab-btn active" data-tab="dl-renewal" onclick="switchDocTab('dl-renewal')" role="tab" aria-selected="true" id="tab-dl-renewal">
+                <i class="fas fa-rotate"></i> DL Renewal
+            </button>
+            <button class="doc-tab-btn" data-tab="address-change" onclick="switchDocTab('address-change')" role="tab" aria-selected="false" id="tab-address-change">
+                <i class="fas fa-location-dot"></i> Address Change
+            </button>
+            <button class="doc-tab-btn" data-tab="rc-renewal" onclick="switchDocTab('rc-renewal')" role="tab" aria-selected="false" id="tab-rc-renewal">
+                <i class="fas fa-car"></i> RC Renewal
+            </button>
+            <button class="doc-tab-btn" data-tab="idp" onclick="switchDocTab('idp')" role="tab" aria-selected="false" id="tab-idp">
+                <i class="fas fa-earth-americas"></i> Int'l DL Permit
+            </button>
+        </div>
+
+        <!-- ---- DL RENEWAL PANEL ---- -->
+        <div class="doc-panel active" id="dl-renewal" role="tabpanel" aria-labelledby="tab-dl-renewal">
+            <div class="doc-card animate-on-scroll">
+                <div class="doc-card-header">
+                    <div>
+                        <h3><i class="fas fa-rotate" style="margin-right:0.5rem;"></i> Driving License Renewal</h3>
+                        <p>Documents required for renewal of expired or expiring DL for all vehicle classes</p>
+                    </div>
+                    <button class="doc-download-btn" onclick="alert('Downloading DL Renewal Checklist PDF...\n\nNote: In the live version this downloads a real PDF.')">
+                        <i class="fas fa-download"></i> Download PDF
+                    </button>
+                </div>
+                <div class="doc-list-grid">
+                    <div class="doc-list-section">
+                        <h4><i class="fas fa-id-card" style="margin-right:0.5rem;"></i> Identity & License Documents</h4>
+                        <ul class="doc-list">
+                            <li><i class="fas fa-file-alt"></i> Original Driving License (expiring/expired)</li>
+                            <li><i class="fas fa-file-alt"></i> Aadhaar Card (original + photocopy)</li>
+                            <li><i class="fas fa-file-alt"></i> PAN Card or Voter ID (identity proof)</li>
+                            <li><i class="fas fa-file-alt"></i> Passport-size photographs (2 nos.)</li>
+                        </ul>
+                    </div>
+                    <div class="doc-list-section">
+                        <h4><i class="fas fa-house" style="margin-right:0.5rem;"></i> Address Proof (any one)</h4>
+                        <ul class="doc-list">
+                            <li><i class="fas fa-file-alt"></i> Aadhaar Card with current address</li>
+                            <li><i class="fas fa-file-alt"></i> Passport (valid)</li>
+                            <li><i class="fas fa-file-alt"></i> Electricity / Water / Gas bill (within 3 months)</li>
+                            <li><i class="fas fa-file-alt"></i> Bank passbook with address</li>
+                        </ul>
+                    </div>
+                    <div class="doc-list-section">
+                        <h4><i class="fas fa-stethoscope" style="margin-right:0.5rem;"></i> Medical & Forms</h4>
+                        <ul class="doc-list">
+                            <li><i class="fas fa-file-alt"></i> Form 9 — Application for Renewal of DL</li>
+                            <li><i class="fas fa-file-alt"></i> Form 1 — Medical fitness self-declaration</li>
+                            <li><i class="fas fa-file-alt"></i> Form 1-A — Doctor-attested (for LMV-TR, HMV)</li>
+                            <li><i class="fas fa-file-alt"></i> Filled application form (we assist)</li>
+                        </ul>
+                    </div>
+                    <div class="doc-list-section">
+                        <h4><i class="fas fa-circle-info" style="margin-right:0.5rem;"></i> Additional Notes</h4>
+                        <ul class="doc-list">
+                            <li><i class="fas fa-triangle-exclamation"></i> If expired &gt;5 years, fresh driving test may apply</li>
+                            <li><i class="fas fa-triangle-exclamation"></i> Biometric (fingerprint + photo) at RTO may be required</li>
+                            <li><i class="fas fa-circle-check"></i> Online payment of government fee required</li>
+                            <li><i class="fas fa-circle-check"></i> We handle all RTO appointment scheduling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ---- ADDRESS CHANGE PANEL ---- -->
+        <div class="doc-panel" id="address-change" role="tabpanel" aria-labelledby="tab-address-change">
+            <div class="doc-card animate-on-scroll">
+                <div class="doc-card-header">
+                    <div>
+                        <h3><i class="fas fa-location-dot" style="margin-right:0.5rem;"></i> Address Change on DL</h3>
+                        <p>Documents required to update your residential address on your driving license</p>
+                    </div>
+                    <button class="doc-download-btn" onclick="alert('Downloading Address Change Checklist PDF...')">
+                        <i class="fas fa-download"></i> Download PDF
+                    </button>
+                </div>
+                <div class="doc-list-grid">
+                    <div class="doc-list-section">
+                        <h4><i class="fas fa-id-card" style="margin-right:0.5rem;"></i> Core Documents</h4>
+                        <ul class="doc-list">
+                            <li><i class="fas fa-file-alt"></i> Original Driving License (to be updated)</li>
+                            <li><i class="fas fa-file-alt"></i> Aadhaar Card with new address</li>
+                            <li><i class="fas fa-file-alt"></i> Passport-size photographs (2 nos.)</li>
+                        </ul>
+                    </div>
+                    <div class="doc-list-section">
+                        <h4><i class="fas fa-house" style="margin-right:0.5rem;"></i> New Address Proof (any two)</h4>
+                        <ul class="doc-list">
+                            <li><i class="fas fa-file-alt"></i> Aadhaar with new address</li>
+                            <li><i class="fas fa-file-alt"></i> Recent utility bill (within 3 months)</li>
+                            <li><i class="fas fa-file-alt"></i> Rental agreement (notarized)</li>
+                            <li><i class="fas fa-file-alt"></i> Passport with new address</li>
+                        </ul>
+                    </div>
+                    <div class="doc-list-section">
+                        <h4><i class="fas fa-file-pen" style="margin-right:0.5rem;"></i> Forms & Applications</h4>
+                        <ul class="doc-list">
+                            <li><i class="fas fa-file-alt"></i> Form 33 — Application for change of address</li>
+                            <li><i class="fas fa-file-alt"></i> Form 1 — Medical fitness self-declaration</li>
+                        </ul>
+                    </div>
+                    <div class="doc-list-section">
+                        <h4><i class="fas fa-circle-info" style="margin-right:0.5rem;"></i> Important Notes</h4>
+                        <ul class="doc-list">
+                            <li><i class="fas fa-circle-check"></i> Both old and new state changes handled</li>
+                            <li><i class="fas fa-circle-check"></i> Processing time: 3–5 working days</li>
+                            <li><i class="fas fa-triangle-exclamation"></i> NOC may be required for inter-state change</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ---- RC RENEWAL PANEL ---- -->
+        <div class="doc-panel" id="rc-renewal" role="tabpanel" aria-labelledby="tab-rc-renewal">
+            <div class="doc-card animate-on-scroll">
+                <div class="doc-card-header">
+                    <div>
+                        <h3><i class="fas fa-car" style="margin-right:0.5rem;"></i> RC Renewal</h3>
+                        <p>Documents required for registration certificate renewal for all vehicle types</p>
+                    </div>
+                    <button class="doc-download-btn" onclick="alert('Downloading RC Renewal Checklist PDF...')">
+                        <i class="fas fa-download"></i> Download PDF
+                    </button>
+                </div>
+                <div class="doc-list-grid">
+                    <div class="doc-list-section">
+                        <h4><i class="fas fa-car" style="margin-right:0.5rem;"></i> Vehicle Documents</h4>
+                        <ul class="doc-list">
+                            <li><i class="fas fa-file-alt"></i> Original RC Book</li>
+                            <li><i class="fas fa-file-alt"></i> Valid Motor Insurance Certificate</li>
+                            <li><i class="fas fa-file-alt"></i> Valid PUC Certificate</li>
+                            <li><i class="fas fa-file-alt"></i> Fitness Certificate (for commercial vehicles)</li>
+                        </ul>
+                    </div>
+                    <div class="doc-list-section">
+                        <h4><i class="fas fa-user" style="margin-right:0.5rem;"></i> Owner's Documents</h4>
+                        <ul class="doc-list">
+                            <li><i class="fas fa-file-alt"></i> Owner's Aadhaar Card</li>
+                            <li><i class="fas fa-file-alt"></i> Driving License of owner</li>
+                            <li><i class="fas fa-file-alt"></i> Passport-size photograph (1 no.)</li>
+                        </ul>
+                    </div>
+                    <div class="doc-list-section">
+                        <h4><i class="fas fa-file-pen" style="margin-right:0.5rem;"></i> Forms Required</h4>
+                        <ul class="doc-list">
+                            <li><i class="fas fa-file-alt"></i> Form 25 — Application for RC Renewal</li>
+                            <li><i class="fas fa-file-alt"></i> Road tax payment receipt (if applicable)</li>
+                        </ul>
+                    </div>
+                    <div class="doc-list-section">
+                        <h4><i class="fas fa-circle-info" style="margin-right:0.5rem;"></i> Notes for Commercial</h4>
+                        <ul class="doc-list">
+                            <li><i class="fas fa-triangle-exclamation"></i> Route permit required for goods vehicles</li>
+                            <li><i class="fas fa-triangle-exclamation"></i> Load test certificate for overloaded permits</li>
+                            <li><i class="fas fa-circle-check"></i> We arrange fitness inspection liaison</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ---- IDP PANEL ---- -->
+        <div class="doc-panel" id="idp" role="tabpanel" aria-labelledby="tab-idp">
+            <div class="doc-card animate-on-scroll">
+                <div class="doc-card-header">
+                    <div>
+                        <h3><i class="fas fa-earth-americas" style="margin-right:0.5rem;"></i> International Driving Permit</h3>
+                        <p>Documents required to obtain an International Driving Permit (IDP) for driving abroad</p>
+                    </div>
+                    <button class="doc-download-btn" onclick="alert('Downloading IDP Checklist PDF...')">
+                        <i class="fas fa-download"></i> Download PDF
+                    </button>
+                </div>
+                <div class="doc-list-grid">
+                    <div class="doc-list-section">
+                        <h4><i class="fas fa-id-card" style="margin-right:0.5rem;"></i> Identity Documents</h4>
+                        <ul class="doc-list">
+                            <li><i class="fas fa-file-alt"></i> Valid Original Indian Driving License</li>
+                            <li><i class="fas fa-file-alt"></i> Valid Passport (with at least 1 year validity)</li>
+                            <li><i class="fas fa-file-alt"></i> Aadhaar Card</li>
+                            <li><i class="fas fa-file-alt"></i> PAN Card</li>
+                        </ul>
+                    </div>
+                    <div class="doc-list-section">
+                        <h4><i class="fas fa-plane" style="margin-right:0.5rem;"></i> Travel Documents</h4>
+                        <ul class="doc-list">
+                            <li><i class="fas fa-file-alt"></i> Valid Visa (destination country)</li>
+                            <li><i class="fas fa-file-alt"></i> Flight ticket / Travel itinerary</li>
+                            <li><i class="fas fa-file-alt"></i> Proof of travel date (booking confirmation)</li>
+                        </ul>
+                    </div>
+                    <div class="doc-list-section">
+                        <h4><i class="fas fa-camera" style="margin-right:0.5rem;"></i> Photographs & Forms</h4>
+                        <ul class="doc-list">
+                            <li><i class="fas fa-file-alt"></i> Passport-size photographs (4 nos.)</li>
+                            <li><i class="fas fa-file-alt"></i> Form 4-A — IDP Application Form</li>
+                            <li><i class="fas fa-file-alt"></i> Self-attested copies of all documents</li>
+                        </ul>
+                    </div>
+                    <div class="doc-list-section">
+                        <h4><i class="fas fa-circle-info" style="margin-right:0.5rem;"></i> Key Information</h4>
+                        <ul class="doc-list">
+                            <li><i class="fas fa-circle-check"></i> Valid for 1 year from date of issue</li>
+                            <li><i class="fas fa-circle-check"></i> Recognized in 185+ countries</li>
+                            <li><i class="fas fa-triangle-exclamation"></i> Must carry original Indian DL along with IDP</li>
+                            <li><i class="fas fa-circle-check"></i> Express 48-hour processing available</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ========== TIPS SECTION ========== -->
+<section style="background:var(--bg-surface);padding:4rem 0;">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label"><i class="fas fa-lightbulb"></i> Pro Tips</div>
+            <h2>Before You Submit — Important Reminders</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;" class="animate-on-scroll">
+            <div class="card">
+                <div style="width:46px;height:46px;background:var(--primary-light);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;">
+                    <i class="fas fa-copy" style="color:var(--primary);font-size:1.125rem;"></i>
+                </div>
+                <h4>Always Self-Attest Copies</h4>
+                <p style="font-size:0.875rem;margin-top:0.375rem;">Sign across every photocopy with "True Copy — Self Attested" along with your full name and date.</p>
+            </div>
+            <div class="card">
+                <div style="width:46px;height:46px;background:var(--primary-light);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;">
+                    <i class="fas fa-camera" style="color:var(--primary);font-size:1.125rem;"></i>
+                </div>
+                <h4>Use Recent Photos</h4>
+                <p style="font-size:0.875rem;margin-top:0.375rem;">Photographs should be taken within the last 6 months on a white background, without glasses or headgear.</p>
+            </div>
+            <div class="card">
+                <div style="width:46px;height:46px;background:var(--primary-light);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;">
+                    <i class="fas fa-calendar-check" style="color:var(--primary);font-size:1.125rem;"></i>
+                </div>
+                <h4>Don't Wait for Expiry</h4>
+                <p style="font-size:0.875rem;margin-top:0.375rem;">Renew your DL or RC up to 1 year before expiry to avoid fines. We send automated reminders to our clients.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content animate-on-scroll">
+            <h2>Have All Your Documents Ready?</h2>
+            <p>Book your appointment now and our team will handle the rest — from document review to delivery.</p>
+            <div class="cta-btns">
+                <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+                <a href="fees.html" class="btn btn-outline-light btn-lg">Check Fees</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<div id="main-footer"></div>
+
+<script src="components.js"></script>
+</body>
+</html>
