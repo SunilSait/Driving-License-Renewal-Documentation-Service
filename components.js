@@ -561,6 +561,25 @@ window.setTrackerSample = function (code) {
     simulateTrackSearch();
 };
 
+window.filterRtoForms = function(category, btn) {
+    const filterBtns = document.querySelectorAll('.forms-filter-btn');
+    filterBtns.forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+
+    const formCards = document.querySelectorAll('.form-card');
+    formCards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.style.display = 'flex';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+};
+
+window.previewRtoForm = function(title, details) {
+    alert(title + '\n\n' + details + '\n\nClick Download to save the official PDF template to your device.');
+};
+
 /* ─── DOM READY INIT ─────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', function () {
     injectNav();

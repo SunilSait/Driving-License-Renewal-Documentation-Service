@@ -24,7 +24,7 @@
         <!-- SLIDE 1: Driving License Renewal -->
         <div class="hero-slide active" data-slide="0">
             <div class="hero-slide-bg">
-                <img src="assets/images/hero-main.jpg" alt="Driving license renewal office background" aria-hidden="true" loading="eager">
+                <img src="assets/images/index-hero-slide1.jpg" alt="Driving license renewal service office background" aria-hidden="true" loading="eager">
                 <div class="hero-slide-overlay"></div>
             </div>
             <div class="hero-main-grid container">
@@ -60,7 +60,7 @@
         <!-- SLIDE 2: International Permit & Address Change -->
         <div class="hero-slide" data-slide="1">
             <div class="hero-slide-bg">
-                <img src="assets/images/service-idp.jpg" alt="International Driving Permit background" aria-hidden="true" loading="lazy">
+                <img src="assets/images/index-hero-slide2.jpg" alt="International Driving Permit passport background" aria-hidden="true" loading="lazy">
                 <div class="hero-slide-overlay"></div>
             </div>
             <div class="hero-main-grid container">
@@ -96,7 +96,7 @@
         <!-- SLIDE 3: Vehicle RC Renewal & Doorstep Pickup -->
         <div class="hero-slide" data-slide="2">
             <div class="hero-slide-bg">
-                <img src="assets/images/service-rc.jpg" alt="Vehicle registration certificate renewal background" aria-hidden="true" loading="lazy">
+                <img src="assets/images/index-hero-slide3.jpg" alt="Vehicle registration certificate RC renewal background" aria-hidden="true" loading="lazy">
                 <div class="hero-slide-overlay"></div>
             </div>
             <div class="hero-main-grid container">
@@ -196,8 +196,9 @@
         <div class="services-grid-3-2 animate-on-scroll">
             <!-- Service 1 -->
             <div class="service-card-sm">
-                <div class="service-icon-wrap">
-                    <i class="fas fa-rotate"></i>
+                <div class="service-card-img-wrap">
+                    <img src="assets/images/service-thumb-renewal.jpg" alt="Driving license renewal service" loading="lazy">
+                    <div class="service-icon-badge"><i class="fas fa-rotate"></i></div>
                 </div>
                 <h3>License Renewal</h3>
                 <p>Hassle-free driving license renewal for light and heavy vehicle categories. We handle the entire process.</p>
@@ -205,8 +206,9 @@
             </div>
             <!-- Service 2 -->
             <div class="service-card-sm">
-                <div class="service-icon-wrap">
-                    <i class="fas fa-location-dot"></i>
+                <div class="service-card-img-wrap">
+                    <img src="assets/images/service-thumb-address.jpg" alt="Address Change on driving license" loading="lazy">
+                    <div class="service-icon-badge"><i class="fas fa-location-dot"></i></div>
                 </div>
                 <h3>Address Change</h3>
                 <p>Update your address on your driving license quickly and correctly with full documentation support.</p>
@@ -214,8 +216,9 @@
             </div>
             <!-- Service 3 -->
             <div class="service-card-sm">
-                <div class="service-icon-wrap">
-                    <i class="fas fa-car"></i>
+                <div class="service-card-img-wrap">
+                    <img src="assets/images/service-thumb-rc.jpg" alt="Vehicle RC Renewal service" loading="lazy">
+                    <div class="service-icon-badge"><i class="fas fa-car"></i></div>
                 </div>
                 <h3>RC Renewal</h3>
                 <p>Registration Certificate renewal for all vehicle types. Timely reminders and complete document assistance.</p>
@@ -223,8 +226,9 @@
             </div>
             <!-- Service 4 -->
             <div class="service-card-sm">
-                <div class="service-icon-wrap">
-                    <i class="fas fa-earth-americas"></i>
+                <div class="service-card-img-wrap">
+                    <img src="assets/images/service-thumb-idp.jpg" alt="International Driving Permit IDP assistance" loading="lazy">
+                    <div class="service-icon-badge"><i class="fas fa-earth-americas"></i></div>
                 </div>
                 <h3>International DL Permit</h3>
                 <p>Planning to drive abroad? We assist with International Driving Permit (IDP) applications and translations.</p>
@@ -232,8 +236,9 @@
             </div>
             <!-- Service 5 -->
             <div class="service-card-sm">
-                <div class="service-icon-wrap">
-                    <i class="fas fa-file-pen"></i>
+                <div class="service-card-img-wrap">
+                    <img src="assets/images/service-thumb-verification.jpg" alt="Document Verification and RTO review" loading="lazy">
+                    <div class="service-icon-badge"><i class="fas fa-file-pen"></i></div>
                 </div>
                 <h3>Document Verification</h3>
                 <p>Pre-submission document review to ensure error-free applications and avoid rejections at the RTO.</p>
@@ -362,69 +367,100 @@
                 </div>
             </div>
 </section>
-
-<!-- ========== NEW SECTION 1: INSTANT FEE & DOCUMENT CALCULATOR ========== -->
-<section class="calc-section">
+<!-- ========== OFFICIAL RTO FORMS & DOCUMENT DOWNLOAD HUB ========== -->
+<section class="rto-forms-hub-section" id="forms-hub">
     <div class="container">
-        <div class="section-header animate-on-scroll">
-            <div class="section-label"><i class="fas fa-calculator"></i> Instant Estimator</div>
-            <h2>Calculate Fees & Required Documents</h2>
-            <p>Select your service details below to instantly view government RTO fees, service timeline, and document checklists.</p>
+        <div class="section-header text-center animate-on-scroll">
+            <div class="section-label"><i class="fas fa-file-pdf"></i> Official Downloads</div>
+            <h2>Official RTO Application Forms Hub</h2>
+            <p style="color:var(--text-muted);margin-top:0.5rem;max-width:640px;margin-left:auto;margin-right:auto;">
+                Download authentic government RTO forms pre-formatted for driving license renewal, medical fitness, and address change.
+            </p>
         </div>
 
-        <div class="calc-wrapper animate-on-scroll">
-            <div class="calc-options-group">
-                <div>
-                    <div class="calc-group-title">1. Select Service Type</div>
-                    <div class="calc-pills" id="calc-service-pills">
-                        <button class="calc-pill active" onclick="updateCalculator('renewal', this)"><i class="fas fa-rotate"></i> DL Renewal</button>
-                        <button class="calc-pill" onclick="updateCalculator('address', this)"><i class="fas fa-location-dot"></i> Address Change</button>
-                        <button class="calc-pill" onclick="updateCalculator('idp', this)"><i class="fas fa-globe"></i> International DL (IDP)</button>
-                        <button class="calc-pill" onclick="updateCalculator('rc', this)"><i class="fas fa-car"></i> Vehicle RC Renewal</button>
-                    </div>
+        <!-- Forms Cards Grid (3 Cards: Form 33, Form 25, Form 26) -->
+        <div class="forms-cards-grid animate-on-scroll">
+            <!-- Form 33 -->
+            <div class="form-card">
+                <div class="form-card-top">
+                    <h3 class="form-card-title">Form 33 — Address Change Notice</h3>
+                    <span class="form-card-badge"><i class="fas fa-check-circle"></i> Official RTO Form</span>
                 </div>
-
-                <div>
-                    <div class="calc-group-title">2. Select Vehicle Category</div>
-                    <div class="calc-pills" id="calc-vehicle-pills">
-                        <button class="calc-pill active" onclick="updateVehicleCategory('mcwg', this)"><i class="fas fa-motorcycle"></i> Two Wheeler (MCWG)</button>
-                        <button class="calc-pill" onclick="updateVehicleCategory('lmv', this)"><i class="fas fa-car-side"></i> Four Wheeler (LMV)</button>
-                        <button class="calc-pill" onclick="updateVehicleCategory('commercial', this)"><i class="fas fa-truck"></i> Commercial / Heavy</button>
-                    </div>
+                <p class="form-card-desc">Application for recording a change of residence in the Driving License or Vehicle Registration Certificate (RC Book).</p>
+                <div class="form-card-meta">
+                    <span><i class="fas fa-file-lines"></i> 1 Page</span>
+                    <span><i class="fas fa-file-pdf" style="color:#ef4444;"></i> PDF Format</span>
+                    <span><i class="fas fa-download"></i> 115 KB</span>
                 </div>
-
-                <div>
-                    <div class="calc-group-title">3. Expiry Status</div>
-                    <div class="calc-pills">
-                        <button class="calc-pill active" onclick="updateExpiryStatus('normal', this)"><i class="fas fa-clock"></i> Expired &lt; 1 Year</button>
-                        <button class="calc-pill" onclick="updateExpiryStatus('grace', this)"><i class="fas fa-circle-exclamation"></i> Expired &gt; 1 Year (+ Grace Fee)</button>
-                    </div>
+                <div class="form-card-actions">
+                    <button class="btn btn-outline btn-sm" onclick="previewRtoForm('Form 33 — Address Change Notice', 'Form 33 is used to notify the RTO about new permanent/present residential address changes along with supporting address proof (Aadhaar, Passport, Utility Bill).')">
+                        <i class="fas fa-eye"></i> Preview
+                    </button>
+                    <a href="assets/forms/Form-33-Address-Change.pdf" download="Form-33-Address-Change.pdf" class="btn btn-primary btn-sm">
+                        <i class="fas fa-download"></i> Download
+                    </a>
                 </div>
             </div>
 
-            <div class="calc-result-card">
-                <div class="calc-result-header">
-                    <div>
-                        <span style="font-size:0.8125rem;color:#94a3b8;font-weight:600;display:block;margin-bottom:0.3rem;">ESTIMATED TOTAL FEE</span>
-                        <div class="calc-result-price" id="calc-total-price">₹750</div>
-                    </div>
-                    <div class="calc-result-turnaround" id="calc-turnaround-badge">
-                        <i class="fas fa-bolt"></i> 3–5 Working Days
-                    </div>
+            <!-- Form 25 -->
+            <div class="form-card">
+                <div class="form-card-top">
+                    <h3 class="form-card-title">Form 25 — Vehicle RC Renewal</h3>
+                    <span class="form-card-badge"><i class="fas fa-check-circle"></i> Official RTO Form</span>
                 </div>
-
-                <span style="font-size:0.8125rem;color:#94a3b8;font-weight:600;display:block;margin-bottom:0.75rem;">MANDATORY DOCUMENTS REQUIRED:</span>
-                <div class="calc-docs-list" id="calc-docs-list">
-                    <div class="calc-doc-item"><i class="fas fa-circle-check"></i> Original Driving License & Copy</div>
-                    <div class="calc-doc-item"><i class="fas fa-circle-check"></i> Form 9 Application for Renewal</div>
-                    <div class="calc-doc-item"><i class="fas fa-circle-check"></i> Form 1-A Medical Fitness Certificate</div>
-                    <div class="calc-doc-item"><i class="fas fa-circle-check"></i> Aadhaar Card Address Proof</div>
+                <p class="form-card-desc">Application for renewal of Registration Certificate for non-transport motor vehicles (cars & 2-wheelers) after 15 years validity expiry.</p>
+                <div class="form-card-meta">
+                    <span><i class="fas fa-file-lines"></i> 2 Pages</span>
+                    <span><i class="fas fa-file-pdf" style="color:#ef4444;"></i> PDF Format</span>
+                    <span><i class="fas fa-download"></i> 156 KB</span>
                 </div>
-
-                <a href="contact.html" class="btn btn-primary w-full" style="justify-content:center;margin-top:0.5rem;">
-                    <i class="fas fa-arrow-right"></i> Book Appointment for This Package
-                </a>
+                <div class="form-card-actions">
+                    <button class="btn btn-outline btn-sm" onclick="previewRtoForm('Form 25 — Vehicle RC Renewal Application', 'Form 25 is submitted for fitness re-inspection and RC renewal of private vehicles older than 15 years.')">
+                        <i class="fas fa-eye"></i> Preview
+                    </button>
+                    <a href="assets/forms/Form-25-RC-Renewal.pdf" download="Form-25-RC-Renewal.pdf" class="btn btn-primary btn-sm">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
             </div>
+
+            <!-- Form 26 -->
+            <div class="form-card">
+                <div class="form-card-top">
+                    <h3 class="form-card-title">Form 26 — Duplicate RC Application</h3>
+                    <span class="form-card-badge"><i class="fas fa-check-circle"></i> Official RTO Form</span>
+                </div>
+                <p class="form-card-desc">Statutory form to apply for issuance of duplicate Registration Certificate in case of loss, destruction, theft, or severe damage.</p>
+                <div class="form-card-meta">
+                    <span><i class="fas fa-file-lines"></i> 2 Pages</span>
+                    <span><i class="fas fa-file-pdf" style="color:#ef4444;"></i> PDF Format</span>
+                    <span><i class="fas fa-download"></i> 168 KB</span>
+                </div>
+                <div class="form-card-actions">
+                    <button class="btn btn-outline btn-sm" onclick="previewRtoForm('Form 26 — Application for Duplicate RC', 'Form 26 is used alongside police FIR or lost report acknowledgment to issue a duplicate smart card RC.')">
+                        <i class="fas fa-eye"></i> Preview
+                    </button>
+                    <a href="assets/forms/Form-26-Duplicate-RC.pdf" download="Form-26-Duplicate-RC.pdf" class="btn btn-primary btn-sm">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Help Callout Banner -->
+        <div class="forms-help-banner animate-on-scroll">
+            <div class="forms-help-content">
+                <div class="forms-help-icon">
+                    <i class="fas fa-file-signature"></i>
+                </div>
+                <div class="forms-help-text">
+                    <h4>Don't Want to Fill Complex RTO Forms Manually?</h4>
+                    <p>Our documentation experts fill, format, and verify all your application forms with 100% accuracy and Zero Rejection Guarantee.</p>
+                </div>
+            </div>
+            <a href="contact.html" class="btn btn-primary btn-lg" style="white-space:nowrap;">
+                <i class="fas fa-headset"></i> Let Experts Fill My Forms
+            </a>
         </div>
     </div>
 </section>
@@ -447,9 +483,7 @@
                 </div>
                 <p class="testimonial-text">Got my license renewed in just 4 days! The team was incredibly helpful and guided me through every single document I needed.</p>
                 <div class="testimonial-author">
-                    <div style="width:44px;height:44px;border-radius:50%;background:var(--primary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                        <i class="fas fa-user" style="color:var(--primary);font-size:1.125rem;"></i>
-                    </div>
+                    <img src="assets/images/profile/rider-rajesh.png" alt="Rajesh Kumar" class="testimonial-avatar-img" loading="lazy">
                     <div>
                         <span class="testimonial-name">Rajesh Kumar</span>
                         <span class="testimonial-role">Software Engineer, Chennai</span>
@@ -464,9 +498,7 @@
                 </div>
                 <p class="testimonial-text">I needed an International Driving Permit for my trip to Europe. DriveSure handled everything within 2 days. Their knowledge was remarkable.</p>
                 <div class="testimonial-author">
-                    <div style="width:44px;height:44px;border-radius:50%;background:var(--secondary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                        <i class="fas fa-user" style="color:var(--secondary);font-size:1.125rem;"></i>
-                    </div>
+                    <img src="assets/images/profile/rider-anita.png" alt="Priya Menon" class="testimonial-avatar-img" loading="lazy">
                     <div>
                         <span class="testimonial-name">Priya Menon</span>
                         <span class="testimonial-role">Business Owner, Coimbatore</span>
@@ -481,9 +513,7 @@
                 </div>
                 <p class="testimonial-text">RC renewal made completely hassle-free. They picked up my documents, handled the RTO submission, and I got my RC delivered home. Exceptional service!</p>
                 <div class="testimonial-author">
-                    <div style="width:44px;height:44px;border-radius:50%;background:var(--primary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                        <i class="fas fa-user" style="color:var(--primary);font-size:1.125rem;"></i>
-                    </div>
+                    <img src="assets/images/profile/rider-suresh.png" alt="Suresh Babu" class="testimonial-avatar-img" loading="lazy">
                     <div>
                         <span class="testimonial-name">Suresh Babu</span>
                         <span class="testimonial-role">Retired Officer, Madurai</span>
