@@ -103,7 +103,7 @@ function injectNav() {
             <!-- Right Actions -->
             <div class="nav-actions">
                 <button onclick="toggleDir()" class="nav-icon-btn" title="Toggle Direction" aria-label="Toggle RTL/LTR">
-                    <span class="dir-label" style="font-size:0.6rem;font-weight:700;">${isRTL ? 'RTL' : 'LTR'}</span>
+                    <span class="dir-label">${isRTL ? 'RTL' : 'LTR'}</span>
                 </button>
                 <button onclick="toggleTheme()" class="nav-icon-btn" title="Toggle Theme" aria-label="Toggle dark mode">
                     <i class="${isDark ? 'fas fa-sun theme-icon' : 'fas fa-moon theme-icon'}"></i>
@@ -128,7 +128,7 @@ function injectNav() {
             </div>
             <div class="mob-toggles">
                 <button onclick="toggleDir()" class="nav-icon-btn" title="Toggle Direction">
-                    <span class="dir-label" style="font-size:0.6rem;font-weight:700;">${isRTL ? 'RTL' : 'LTR'}</span>
+                    <span class="dir-label">${isRTL ? 'RTL' : 'LTR'}</span>
                 </button>
                 <button onclick="toggleTheme()" class="nav-icon-btn" title="Toggle Theme">
                     <i class="${isDark ? 'fas fa-sun theme-icon' : 'fas fa-moon theme-icon'}"></i>
