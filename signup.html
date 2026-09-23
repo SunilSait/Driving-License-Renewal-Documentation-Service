@@ -30,7 +30,7 @@
             right: -20%;
             width: 400px;
             height: 400px;
-            background: rgba(201,162,39,0.1);
+            background: rgba(79,70,229,0.12);
             border-radius: 50%;
             filter: blur(80px);
         }
@@ -48,13 +48,13 @@
         .auth-panel-text { position: relative; z-index: 1; text-align: center; max-width: 360px; }
         .auth-panel-icon {
             width: 80px; height: 80px;
-            background: rgba(201,162,39,0.15);
-            border: 1px solid rgba(201,162,39,0.25);
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
             border-radius: var(--radius-2xl);
             display: flex; align-items: center; justify-content: center;
             margin: 0 auto 1.5rem;
         }
-        .auth-panel-icon i { font-size: 2rem; color: var(--secondary); }
+        .auth-panel-icon i { font-size: 2rem; color: #93C5FD; }
         .auth-panel-text h2 { color: #fff; font-size: 1.625rem; margin-bottom: 0.75rem; }
         .auth-panel-text p { color: rgba(255,255,255,0.65); font-size: 0.9375rem; font-weight: 400; }
         .auth-panel-badges { display: flex; flex-direction: column; gap: 0.625rem; margin-top: 2rem; }
@@ -62,12 +62,13 @@
         .auth-panel-badge i { color: var(--secondary); flex-shrink: 0; }
         .auth-panel-right {
             flex: 1;
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
+            padding: 3rem 1.5rem;
             position: relative;
-            overflow-y: auto;
+            min-height: 100dvh;
         }
         @media (max-width: 768px) {
             .auth-panel-left { display: none; }
@@ -90,24 +91,7 @@
 </div>
 
 <div class="auth-split">
-    <!-- Left decorative panel -->
-    <div class="auth-panel-left">
-        <div class="auth-panel-text">
-            <div class="auth-panel-icon">
-                <i class="fas fa-user-plus"></i>
-            </div>
-            <h2>Join DriveSure Today</h2>
-            <p>Create a free account and get access to application tracking, document storage, and renewal reminders.</p>
-            <div class="auth-panel-badges">
-                <div class="auth-panel-badge"><i class="fas fa-circle-check"></i> Free account — no credit card needed</div>
-                <div class="auth-panel-badge"><i class="fas fa-circle-check"></i> Application status in real time</div>
-                <div class="auth-panel-badge"><i class="fas fa-circle-check"></i> Automated renewal reminders</div>
-                <div class="auth-panel-badge"><i class="fas fa-circle-check"></i> Secure document storage</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Right form panel -->
+    <!-- Form panel -->
     <div class="auth-panel-right">
         <div class="auth-card" style="max-width:460px;">
             <!-- Decorative orbs -->
@@ -131,18 +115,22 @@
             <!-- Social Sign Up -->
             <div class="social-login-grid">
                 <button class="social-btn social-google" title="Sign up with Google" aria-label="Sign up with Google" onclick="alert('Google Sign-Up coming soon!')">
-                    <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
-                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+                        <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.26v3.13C3.25 21.32 7.34 24 12 24z"/>
+                        <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.6H1.26C.46 8.2.01 10.04.01 12c0 1.96.45 3.8 1.25 5.4l4.02-3.13z"/>
+                        <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.25 2.68 1.26 6.6l4.02 3.13c.95-2.83 3.6-4.98 6.72-4.98z"/>
                     </svg>
                 </button>
                 <button class="social-btn social-apple" title="Sign up with Apple" aria-label="Sign up with Apple" onclick="alert('Apple Sign-Up coming soon!')">
-                    <i class="fab fa-apple" style="font-size:1.25rem;"></i>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.32c.67-.82 1.12-1.95.99-3.09-1 .04-2.17.67-2.88 1.5-.64.74-1.2 1.9-1.04 3.03 1.12.09 2.26-.62 2.93-1.44z"/>
+                    </svg>
                 </button>
                 <button class="social-btn social-facebook" title="Sign up with Facebook" aria-label="Sign up with Facebook" onclick="alert('Facebook Sign-Up coming soon!')">
-                    <i class="fab fa-facebook-f"></i>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877F2" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
                 </button>
             </div>
 
@@ -165,7 +153,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="signup-phone">Phone Number</label>
-                    <input type="tel" id="signup-phone" class="form-input" placeholder="+91 98765 43210" required>
+                    <input type="tel" id="signup-phone" class="form-input" placeholder="e.g. +91 98765 43210" required>
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="signup-password">Password</label>
@@ -185,9 +173,9 @@
                         </button>
                     </div>
                 </div>
-                <div style="display:flex;align-items:flex-start;gap:0.625rem;margin-bottom:1.5rem;">
-                    <input type="checkbox" id="agree-terms" style="accent-color:var(--secondary);margin-top:2px;flex-shrink:0;" required>
-                    <label for="agree-terms" style="font-size:0.875rem;cursor:pointer;line-height:1.5;">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="agree-terms" required>
+                    <label for="agree-terms">
                         I agree to the <a href="#" style="color:var(--secondary);font-weight:600;">Terms of Service</a> and <a href="#" style="color:var(--secondary);font-weight:600;">Privacy Policy</a>. I consent to receiving renewal reminders via SMS and email.
                     </label>
                 </div>

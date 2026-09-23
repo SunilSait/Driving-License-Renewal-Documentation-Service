@@ -9,6 +9,20 @@
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (savedTheme === 'dark' || (!savedTheme && prefersDark)) html.classList.add('dark');
     if (localStorage.getItem('ds_dir') === 'rtl') html.setAttribute('dir', 'rtl');
+
+    // Clean up temporary palette storage and lock in Royal Blue & Indigo theme
+    localStorage.removeItem('ds_color_palette');
+    localStorage.removeItem('ds_palette_version');
+    const root = document.documentElement;
+    root.style.setProperty('--primary', '#1E40AF');
+    root.style.setProperty('--primary-hover', '#1D4ED8');
+    root.style.setProperty('--primary-light', '#EFF6FF');
+    root.style.setProperty('--primary-subtle', 'rgba(30, 64, 175, 0.08)');
+    root.style.setProperty('--primary-glow', 'rgba(30, 64, 175, 0.25)');
+    root.style.setProperty('--secondary', '#4F46E5');
+    root.style.setProperty('--secondary-hover', '#4338CA');
+    root.style.setProperty('--secondary-light', '#EEF2FF');
+    root.style.setProperty('--secondary-glow', 'rgba(79, 70, 229, 0.25)');
 })();
 
 /* ─── THEME TOGGLE ─────────────────────────────────────────── */
@@ -380,6 +394,172 @@ function initCountdown(targetDate) {
     update();
     setInterval(update, 1000);
 }
+
+/* ─── INSTANT CALCULATOR LOGIC ────────────────────────────────── */
+let currentService = 'renewal';
+let currentCategory = 'mcwg';
+let currentExpiry = 'normal';
+
+const calcData = {
+    renewal: {
+        baseFee: 750,
+        turnaround: '3–5 Working Days',
+        docs: [
+            'Original Driving License & Self-Attested Copy',
+            'Form 9 Application for License Renewal',
+            'Form 1-A Medical Fitness Certificate',
+            'Aadhaar Card Address Proof'
+        ]
+    },
+    address: {
+        baseFee: 600,
+        turnaround: '2–4 Working Days',
+        docs: [
+            'Original Driving License',
+            'Form 33 Address Modification Request',
+            'New Address Proof (Aadhaar / Passport / Utility Bill)',
+            'Passport-size Photograph'
+        ]
+    },
+    idp: {
+        baseFee: 1800,
+        turnaround: '24–48 Hours',
+        docs: [
+            'Valid Indian Driving License (Original)',
+            'Valid Passport & Active Visa Copies',
+            'Air Ticket Copy (Flight Reservation)',
+            'Form 4-A Medical & IDP Application'
+        ]
+    },
+    rc: {
+        baseFee: 1250,
+        turnaround: '4–6 Working Days',
+        docs: [
+            'Original Vehicle RC Smart Card',
+            'Valid Pollution Under Control (PUC) Certificate',
+            'Valid Vehicle Insurance Policy',
+            'Form 25 Application for Registration Renewal'
+        ]
+    }
+};
+
+function renderCalculatorResult() {
+    const data = calcData[currentService];
+    let price = data.baseFee;
+
+    if (currentCategory === 'lmv') price += 200;
+    if (currentCategory === 'commercial') price += 500;
+    if (currentExpiry === 'grace') price += 350;
+
+    ['calc-total-price', 'calc-total-price-h2'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = '₹' + price;
+    });
+
+    ['calc-turnaround-badge', 'calc-turnaround-badge-h2'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = '<i class="fas fa-bolt"></i> ' + data.turnaround;
+    });
+
+    ['calc-docs-list', 'calc-docs-list-h2'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.innerHTML = data.docs.map(doc => `<div class="calc-doc-item"><i class="fas fa-circle-check"></i> ${doc}</div>`).join('');
+        }
+    });
+}
+
+window.updateCalculator = function (service, btn) {
+    currentService = service;
+    if (btn && btn.parentElement) {
+        btn.parentElement.querySelectorAll('.calc-pill').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+    }
+    renderCalculatorResult();
+};
+
+window.updateVehicleCategory = function (cat, btn) {
+    currentCategory = cat;
+    if (btn && btn.parentElement) {
+        btn.parentElement.querySelectorAll('.calc-pill').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+    }
+    renderCalculatorResult();
+};
+
+window.updateExpiryStatus = function (status, btn) {
+    currentExpiry = status;
+    if (btn && btn.parentElement) {
+        btn.parentElement.querySelectorAll('.calc-pill').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+    }
+    renderCalculatorResult();
+};
+
+/* ─── LIVE TRACKER DEMO LOGIC ─────────────────────────────────── */
+const trackerDemoData = {
+    'TN-DL-8429': [
+        { title: 'Document Audit', status: 'Passed 100% Audit', done: true },
+        { title: 'RTO Counter Filing', status: 'Filed at TN-01 Counter', done: true },
+        { title: 'Smart Card Issue', status: 'Approval In-Progress', active: true },
+        { title: 'Speed Post Dispatch', status: 'Pending Dispatch', done: false }
+    ],
+    'TN-IDP-5521': [
+        { title: 'Document Audit', status: 'Passport Verified', done: true },
+        { title: 'Embassies & RTO Liaison', status: 'IDP Approved', done: true },
+        { title: 'Permit Printing', status: 'Issued & Stamped', done: true },
+        { title: 'Doorstep Courier', status: 'In Transit (SpeedPost #TN982)', active: true }
+    ],
+    'TN-RC-1042': [
+        { title: 'PUC & Insurance Check', status: 'Verified Valid', done: true },
+        { title: 'Vehicle Inspection', status: 'Fitness Passed', done: true },
+        { title: 'RC Renewal Filing', status: 'Under RTO Review', active: true },
+        { title: 'Smart Card Delivery', status: 'Scheduled', done: false }
+    ]
+};
+
+window.simulateTrackSearch = function () {
+    const input = document.getElementById('tracker-input-field') || document.getElementById('tracker-input-field-h2');
+    const containers = document.querySelectorAll('.tracker-flow');
+    if (!input || !containers.length) return;
+
+    const val = input.value.trim().toUpperCase();
+    const data = trackerDemoData[val] || [
+        { title: 'Application Received', status: 'Logged in Database', done: true },
+        { title: 'Document Audit', status: 'Initial Check Passed', done: true },
+        { title: 'RTO Filing', status: 'In Progress at Liaison Counter', active: true },
+        { title: 'Dispatch', status: 'Scheduled via Speed Post', done: false }
+    ];
+
+    const html = data.map(item => {
+        let cls = 'tracker-step-item';
+        let icon = '<i class="fas fa-circle"></i>';
+        if (item.done) {
+            cls += ' done';
+            icon = '<i class="fas fa-check"></i>';
+        } else if (item.active) {
+            cls += ' active-step';
+            icon = '<i class="fas fa-spinner fa-spin"></i>';
+        }
+        return `
+            <div class="${cls}">
+                <div class="tracker-step-icon">${icon}</div>
+                <div class="tracker-step-title">${item.title}</div>
+                <div class="tracker-step-status">${item.status}</div>
+            </div>
+        `;
+    }).join('');
+
+    containers.forEach(c => c.innerHTML = html);
+};
+
+window.setTrackerSample = function (code) {
+    ['tracker-input-field', 'tracker-input-field-h2'].forEach(id => {
+        const input = document.getElementById(id);
+        if (input) input.value = code;
+    });
+    simulateTrackSearch();
+};
 
 /* ─── DOM READY INIT ─────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', function () {

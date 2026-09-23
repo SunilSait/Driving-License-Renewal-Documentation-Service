@@ -15,75 +15,174 @@
 <div id="main-nav"></div>
 
 <!-- ========== HERO SECTION — DIAGONAL SPLIT ========== -->
-<section class="hero-main">
+<!-- ========== HERO SLIDER (3 SLIDES, 5s SWITCH) ========== -->
+<section class="hero-main" id="hero-slider">
     <div class="hero-main-bg" aria-hidden="true"></div>
-    <div class="hero-main-grid container">
+    
+    <div class="hero-slides-wrapper">
 
-        <!-- Text Side -->
-        <div class="hero-main-text animate-on-scroll">
-            <div class="hero-badge">
-                <i class="fas fa-shield-alt"></i>
-                Government Approved Service
+        <!-- SLIDE 1: Driving License Renewal -->
+        <div class="hero-slide active" data-slide="0">
+            <div class="hero-slide-bg">
+                <img src="assets/images/hero-main.jpg" alt="Driving license renewal office background" aria-hidden="true" loading="eager">
+                <div class="hero-slide-overlay"></div>
             </div>
-            <h1>
-                Renew Your License,
-                <span class="hero-title-accent">Stress-Free</span>
-            </h1>
-            <p>Complete driving license and vehicle documentation assistance. From renewal to international permits — we handle the paperwork so you can focus on the road.</p>
+            <div class="hero-main-grid container">
+                <div class="hero-main-text">
+                    <div class="hero-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        Government Approved Service
+                    </div>
+                    <h1>
+                        Renew Your License,
+                        <span class="hero-title-accent">Stress-Free</span>
+                    </h1>
+                    <p>Complete driving license and vehicle documentation assistance. From renewal to international permits — we handle the paperwork so you can focus on the road.</p>
 
-            <div class="hero-trust-badges">
-                <span class="hero-trust-badge"><i class="fas fa-check-circle"></i> RTO Approved</span>
-                <span class="hero-trust-badge"><i class="fas fa-check-circle"></i> 100% Genuine</span>
-                <span class="hero-trust-badge"><i class="fas fa-check-circle"></i> 3–7 Day Process</span>
-            </div>
+                    <div class="hero-trust-badges">
+                        <span class="hero-trust-badge"><i class="fas fa-check-circle"></i> RTO Approved</span>
+                        <span class="hero-trust-badge"><i class="fas fa-check-circle"></i> 100% Genuine</span>
+                        <span class="hero-trust-badge"><i class="fas fa-check-circle"></i> 3–7 Day Process</span>
+                    </div>
 
-            <div class="hero-cta-group">
-                <a href="contact.html" class="btn btn-primary btn-lg">
-                    <i class="fas fa-calendar-check"></i> Book Appointment
-                </a>
-                <a href="services.html" class="btn btn-secondary btn-lg">
-                    Explore Services
-                </a>
+                    <div class="hero-cta-group">
+                        <a href="contact.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-calendar-check"></i> Book Appointment
+                        </a>
+                        <a href="services.html" class="btn btn-secondary btn-lg">
+                            Explore Services
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Visual Side -->
-        <div class="hero-main-visual animate-on-scroll animate-delay-2">
-            <div class="hero-collage">
-                <div class="hero-collage-item hero-collage-main">
-                    <img src="assets/images/hero-main.jpg" alt="Driving license renewal service office" loading="eager" onerror="this.parentElement.classList.add('img-placeholder'); this.style.display='none'; this.parentElement.innerHTML+='<i class=\'fas fa-id-card\' style=\'font-size:3rem;\'></i>'">
-                    <span class="collage-tag"><span class="collage-dot"></span> License Renewal</span>
-                </div>
-                <div class="hero-collage-item hero-collage-sm">
-                    <img src="assets/images/hero-rto.jpg" alt="Government service counter assistance" loading="lazy" onerror="this.parentElement.classList.add('img-placeholder'); this.style.display='none'; this.parentElement.innerHTML+='<i class=\'fas fa-building\' style=\'font-size:2rem;\'></i>'">
-                    <span class="collage-tag"><span class="collage-dot"></span> RTO Assistance</span>
-                </div>
-                <div class="hero-collage-item hero-collage-sm">
-                    <img src="assets/images/hero-license.jpg" alt="Driving license card closeup" loading="lazy" onerror="this.parentElement.classList.add('img-placeholder'); this.style.display='none'; this.parentElement.innerHTML+='<i class=\'fas fa-credit-card\' style=\'font-size:2rem;\'></i>'">
-                    <span class="collage-tag"><span class="collage-dot"></span> Smart Card DL</span>
+        <!-- SLIDE 2: International Permit & Address Change -->
+        <div class="hero-slide" data-slide="1">
+            <div class="hero-slide-bg">
+                <img src="assets/images/service-idp.jpg" alt="International Driving Permit background" aria-hidden="true" loading="lazy">
+                <div class="hero-slide-overlay"></div>
+            </div>
+            <div class="hero-main-grid container">
+                <div class="hero-main-text">
+                    <div class="hero-badge">
+                        <i class="fas fa-globe"></i>
+                        International & Address Services
+                    </div>
+                    <h1>
+                        Drive Overseas & Update
+                        <span class="hero-title-accent">Your Address</span>
+                    </h1>
+                    <p>Planning an overseas trip or moved home? Get your International Driving Permit (IDP) and official RTO address updates processed with zero paperwork stress.</p>
+
+                    <div class="hero-trust-badges">
+                        <span class="hero-trust-badge"><i class="fas fa-plane"></i> 150+ Countries</span>
+                        <span class="hero-trust-badge"><i class="fas fa-location-dot"></i> Address Update</span>
+                        <span class="hero-trust-badge"><i class="fas fa-clock"></i> 48-Hour IDP</span>
+                    </div>
+
+                    <div class="hero-cta-group">
+                        <a href="contact.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-passport"></i> Apply for IDP
+                        </a>
+                        <a href="services.html#address" class="btn btn-secondary btn-lg">
+                            Update Address
+                        </a>
+                    </div>
                 </div>
             </div>
-            <!-- Floating Card -->
-            <div class="hero-floating-card">
-                <span class="stat-num" data-count="12500" data-suffix="+">0+</span>
+        </div>
+
+        <!-- SLIDE 3: Vehicle RC Renewal & Doorstep Pickup -->
+        <div class="hero-slide" data-slide="2">
+            <div class="hero-slide-bg">
+                <img src="assets/images/service-rc.jpg" alt="Vehicle registration certificate renewal background" aria-hidden="true" loading="lazy">
+                <div class="hero-slide-overlay"></div>
+            </div>
+            <div class="hero-main-grid container">
+                <div class="hero-main-text">
+                    <div class="hero-badge">
+                        <i class="fas fa-car"></i>
+                        RC Renewal & Doorstep Service
+                    </div>
+                    <h1>
+                        Vehicle RC Renewal &
+                        <span class="hero-title-accent">Doorstep Pickup</span>
+                    </h1>
+                    <p>Keep your vehicle RC 100% legal. Enjoy hassle-free doorstep document collection, RTO filing, pollution fitness coordination, and speed post delivery.</p>
+
+                    <div class="hero-trust-badges">
+                        <span class="hero-trust-badge"><i class="fas fa-truck-fast"></i> Doorstep Pickup</span>
+                        <span class="hero-trust-badge"><i class="fas fa-file-invoice"></i> PUC & Fitness</span>
+                        <span class="hero-trust-badge"><i class="fas fa-shield"></i> 100% Guaranteed</span>
+                    </div>
+
+                    <div class="hero-cta-group">
+                        <a href="contact.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-car-side"></i> Renew Vehicle RC
+                        </a>
+                        <a href="fees.html" class="btn btn-secondary btn-lg">
+                            View Pricing
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation Dots & Arrows -->
+    <div class="hero-slider-nav container">
+        <button class="slider-arrow slider-prev" aria-label="Previous Slide" onclick="moveHeroSlide(-1)">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="slider-dots">
+            <button class="slider-dot active" onclick="setHeroSlide(0)" aria-label="Slide 1">
+                <span class="dot-progress"></span>
+            </button>
+            <button class="slider-dot" onclick="setHeroSlide(1)" aria-label="Slide 2">
+                <span class="dot-progress"></span>
+            </button>
+            <button class="slider-dot" onclick="setHeroSlide(2)" aria-label="Slide 3">
+                <span class="dot-progress"></span>
+            </button>
+        </div>
+        <button class="slider-arrow slider-next" aria-label="Next Slide" onclick="moveHeroSlide(1)">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+</section>
+
+<!-- ========== STATS SECTION ========== -->
+<section class="stats-section">
+    <div class="container">
+        <div class="section-header animate-on-scroll" style="max-width:600px;">
+            <div class="section-label section-label-on-dark">
+                <i class="fas fa-chart-bar"></i> Our Numbers
+            </div>
+            <h2 style="color:#fff;">Trusted by Thousands Across the State</h2>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-item animate-on-scroll">
+                <span class="stat-number" data-count="12500" data-suffix="+">0</span>
                 <span class="stat-label">Licenses Renewed</span>
+            </div>
+            <div class="stat-item animate-on-scroll animate-delay-1">
+                <span class="stat-number" data-count="98" data-suffix="%">0</span>
+                <span class="stat-label">Success Rate</span>
+            </div>
+            <div class="stat-item animate-on-scroll animate-delay-2">
+                <span class="stat-number" data-count="8" data-suffix=" Yrs">0</span>
+                <span class="stat-label">Years of Experience</span>
+            </div>
+            <div class="stat-item animate-on-scroll animate-delay-3">
+                <span class="stat-number" data-count="5">0</span>
+                <span class="stat-label">RTO Office Tie-ups</span>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ========== TRUST BAR ========== -->
-<div class="trust-bar">
-    <div class="container">
-        <div class="trust-bar-inner">
-            <div class="trust-item"><i class="fas fa-award"></i> Government Certified</div>
-            <div class="trust-item"><i class="fas fa-clock"></i> Fast Processing</div>
-            <div class="trust-item"><i class="fas fa-headset"></i> Expert Guidance</div>
-            <div class="trust-item"><i class="fas fa-globe"></i> International DL Support</div>
-            <div class="trust-item"><i class="fas fa-shield-halved"></i> Secure & Verified</div>
-        </div>
-    </div>
-</div>
 
 <!-- ========== SERVICES OVERVIEW ========== -->
 <section class="services-overview">
@@ -94,53 +193,51 @@
             <p>From license renewal to international permits, we cover all your documentation needs with speed and accuracy.</p>
         </div>
 
-        <div class="services-scroll-wrap">
-            <div class="services-scroll-row animate-on-scroll">
-                <!-- Service 1 -->
-                <div class="service-card-sm">
-                    <div class="service-icon-wrap">
-                        <i class="fas fa-rotate"></i>
-                    </div>
-                    <h3>License Renewal</h3>
-                    <p>Hassle-free driving license renewal for light and heavy vehicle categories. We handle the entire process.</p>
-                    <a href="services.html#renewal" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+        <div class="services-grid-3-2 animate-on-scroll">
+            <!-- Service 1 -->
+            <div class="service-card-sm">
+                <div class="service-icon-wrap">
+                    <i class="fas fa-rotate"></i>
                 </div>
-                <!-- Service 2 -->
-                <div class="service-card-sm">
-                    <div class="service-icon-wrap">
-                        <i class="fas fa-location-dot"></i>
-                    </div>
-                    <h3>Address Change</h3>
-                    <p>Update your address on your driving license quickly and correctly with full documentation support.</p>
-                    <a href="services.html#address" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                <h3>License Renewal</h3>
+                <p>Hassle-free driving license renewal for light and heavy vehicle categories. We handle the entire process.</p>
+                <a href="services.html#renewal" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <!-- Service 2 -->
+            <div class="service-card-sm">
+                <div class="service-icon-wrap">
+                    <i class="fas fa-location-dot"></i>
                 </div>
-                <!-- Service 3 -->
-                <div class="service-card-sm">
-                    <div class="service-icon-wrap">
-                        <i class="fas fa-car"></i>
-                    </div>
-                    <h3>RC Renewal</h3>
-                    <p>Registration Certificate renewal for all vehicle types. Timely reminders and complete document assistance.</p>
-                    <a href="services.html#rc" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                <h3>Address Change</h3>
+                <p>Update your address on your driving license quickly and correctly with full documentation support.</p>
+                <a href="services.html#address" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <!-- Service 3 -->
+            <div class="service-card-sm">
+                <div class="service-icon-wrap">
+                    <i class="fas fa-car"></i>
                 </div>
-                <!-- Service 4 -->
-                <div class="service-card-sm">
-                    <div class="service-icon-wrap">
-                        <i class="fas fa-earth-americas"></i>
-                    </div>
-                    <h3>International DL Permit</h3>
-                    <p>Planning to drive abroad? We assist with International Driving Permit (IDP) applications and translations.</p>
-                    <a href="services.html#idp" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                <h3>RC Renewal</h3>
+                <p>Registration Certificate renewal for all vehicle types. Timely reminders and complete document assistance.</p>
+                <a href="services.html#rc" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <!-- Service 4 -->
+            <div class="service-card-sm">
+                <div class="service-icon-wrap">
+                    <i class="fas fa-earth-americas"></i>
                 </div>
-                <!-- Service 5 -->
-                <div class="service-card-sm">
-                    <div class="service-icon-wrap">
-                        <i class="fas fa-file-pen"></i>
-                    </div>
-                    <h3>Document Verification</h3>
-                    <p>Pre-submission document review to ensure error-free applications and avoid rejections at the RTO.</p>
-                    <a href="services.html" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                <h3>International DL Permit</h3>
+                <p>Planning to drive abroad? We assist with International Driving Permit (IDP) applications and translations.</p>
+                <a href="services.html#idp" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <!-- Service 5 -->
+            <div class="service-card-sm">
+                <div class="service-icon-wrap">
+                    <i class="fas fa-file-pen"></i>
                 </div>
+                <h3>Document Verification</h3>
+                <p>Pre-submission document review to ensure error-free applications and avoid rejections at the RTO.</p>
+                <a href="services.html" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </div>
@@ -264,39 +361,74 @@
                     <p>Your renewed driving license or documents are delivered directly to your registered address. No need to visit the RTO at all!</p>
                 </div>
             </div>
+</section>
+
+<!-- ========== NEW SECTION 1: INSTANT FEE & DOCUMENT CALCULATOR ========== -->
+<section class="calc-section">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label"><i class="fas fa-calculator"></i> Instant Estimator</div>
+            <h2>Calculate Fees & Required Documents</h2>
+            <p>Select your service details below to instantly view government RTO fees, service timeline, and document checklists.</p>
+        </div>
+
+        <div class="calc-wrapper animate-on-scroll">
+            <div class="calc-options-group">
+                <div>
+                    <div class="calc-group-title">1. Select Service Type</div>
+                    <div class="calc-pills" id="calc-service-pills">
+                        <button class="calc-pill active" onclick="updateCalculator('renewal', this)"><i class="fas fa-rotate"></i> DL Renewal</button>
+                        <button class="calc-pill" onclick="updateCalculator('address', this)"><i class="fas fa-location-dot"></i> Address Change</button>
+                        <button class="calc-pill" onclick="updateCalculator('idp', this)"><i class="fas fa-globe"></i> International DL (IDP)</button>
+                        <button class="calc-pill" onclick="updateCalculator('rc', this)"><i class="fas fa-car"></i> Vehicle RC Renewal</button>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="calc-group-title">2. Select Vehicle Category</div>
+                    <div class="calc-pills" id="calc-vehicle-pills">
+                        <button class="calc-pill active" onclick="updateVehicleCategory('mcwg', this)"><i class="fas fa-motorcycle"></i> Two Wheeler (MCWG)</button>
+                        <button class="calc-pill" onclick="updateVehicleCategory('lmv', this)"><i class="fas fa-car-side"></i> Four Wheeler (LMV)</button>
+                        <button class="calc-pill" onclick="updateVehicleCategory('commercial', this)"><i class="fas fa-truck"></i> Commercial / Heavy</button>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="calc-group-title">3. Expiry Status</div>
+                    <div class="calc-pills">
+                        <button class="calc-pill active" onclick="updateExpiryStatus('normal', this)"><i class="fas fa-clock"></i> Expired &lt; 1 Year</button>
+                        <button class="calc-pill" onclick="updateExpiryStatus('grace', this)"><i class="fas fa-circle-exclamation"></i> Expired &gt; 1 Year (+ Grace Fee)</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calc-result-card">
+                <div class="calc-result-header">
+                    <div>
+                        <span style="font-size:0.8125rem;color:#94a3b8;font-weight:600;display:block;margin-bottom:0.3rem;">ESTIMATED TOTAL FEE</span>
+                        <div class="calc-result-price" id="calc-total-price">₹750</div>
+                    </div>
+                    <div class="calc-result-turnaround" id="calc-turnaround-badge">
+                        <i class="fas fa-bolt"></i> 3–5 Working Days
+                    </div>
+                </div>
+
+                <span style="font-size:0.8125rem;color:#94a3b8;font-weight:600;display:block;margin-bottom:0.75rem;">MANDATORY DOCUMENTS REQUIRED:</span>
+                <div class="calc-docs-list" id="calc-docs-list">
+                    <div class="calc-doc-item"><i class="fas fa-circle-check"></i> Original Driving License & Copy</div>
+                    <div class="calc-doc-item"><i class="fas fa-circle-check"></i> Form 9 Application for Renewal</div>
+                    <div class="calc-doc-item"><i class="fas fa-circle-check"></i> Form 1-A Medical Fitness Certificate</div>
+                    <div class="calc-doc-item"><i class="fas fa-circle-check"></i> Aadhaar Card Address Proof</div>
+                </div>
+
+                <a href="contact.html" class="btn btn-primary w-full" style="justify-content:center;margin-top:0.5rem;">
+                    <i class="fas fa-arrow-right"></i> Book Appointment for This Package
+                </a>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- ========== STATS SECTION ========== -->
-<section class="stats-section">
-    <div class="container">
-        <div class="section-header animate-on-scroll" style="max-width:600px;">
-            <div class="section-label" style="color:var(--secondary);background:rgba(201,162,39,0.1);border-color:rgba(201,162,39,0.2);">
-                <i class="fas fa-chart-bar"></i> Our Numbers
-            </div>
-            <h2 style="color:#fff;">Trusted by Thousands Across the State</h2>
-        </div>
-        <div class="stats-grid">
-            <div class="stat-item animate-on-scroll">
-                <span class="stat-number" data-count="12500" data-suffix="+">0</span>
-                <span class="stat-label">Licenses Renewed</span>
-            </div>
-            <div class="stat-item animate-on-scroll animate-delay-1">
-                <span class="stat-number" data-count="98" data-suffix="%">0</span>
-                <span class="stat-label">Success Rate</span>
-            </div>
-            <div class="stat-item animate-on-scroll animate-delay-2">
-                <span class="stat-number" data-count="8" data-suffix=" Yrs">0</span>
-                <span class="stat-label">Years of Experience</span>
-            </div>
-            <div class="stat-item animate-on-scroll animate-delay-3">
-                <span class="stat-number" data-count="5">0</span>
-                <span class="stat-label">RTO Office Tie-ups</span>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- ========== TESTIMONIALS ========== -->
 <section class="testimonials-section">
@@ -313,7 +445,7 @@
                 <div class="testimonial-stars">
                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                 </div>
-                <p class="testimonial-text">Got my license renewed in just 4 days! The team was incredibly helpful and guided me through every single document I needed. Highly professional service.</p>
+                <p class="testimonial-text">Got my license renewed in just 4 days! The team was incredibly helpful and guided me through every single document I needed.</p>
                 <div class="testimonial-author">
                     <div style="width:44px;height:44px;border-radius:50%;background:var(--primary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
                         <i class="fas fa-user" style="color:var(--primary);font-size:1.125rem;"></i>
@@ -330,7 +462,7 @@
                 <div class="testimonial-stars">
                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                 </div>
-                <p class="testimonial-text">I needed an International Driving Permit for my trip to Europe. DriveSure handled everything within 2 days. Their knowledge of the process was remarkable.</p>
+                <p class="testimonial-text">I needed an International Driving Permit for my trip to Europe. DriveSure handled everything within 2 days. Their knowledge was remarkable.</p>
                 <div class="testimonial-author">
                     <div style="width:44px;height:44px;border-radius:50%;background:var(--secondary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
                         <i class="fas fa-user" style="color:var(--secondary);font-size:1.125rem;"></i>
@@ -371,16 +503,7 @@
             <p>Everything you need to know about our driving license and documentation services.</p>
         </div>
 
-        <div class="faq-grid">
-            <div class="faq-item">
-                <button class="faq-trigger" onclick="toggleFAQ(this)">
-                    How long does license renewal take?
-                    <span class="faq-trigger-icon"><i class="fas fa-plus"></i></span>
-                </button>
-                <div class="faq-body">
-                    <p>Standard driving license renewal typically takes 3–7 working days depending on the RTO office. We offer an express 2-day service for urgent renewals at an additional charge.</p>
-                </div>
-            </div>
+        <div class="faq-container-single" style="max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:1rem;">
             <div class="faq-item">
                 <button class="faq-trigger" onclick="toggleFAQ(this)">
                     Do I need to visit the RTO office in person?
@@ -392,29 +515,11 @@
             </div>
             <div class="faq-item">
                 <button class="faq-trigger" onclick="toggleFAQ(this)">
-                    What documents are needed for license renewal?
-                    <span class="faq-trigger-icon"><i class="fas fa-plus"></i></span>
-                </button>
-                <div class="faq-body">
-                    <p>You typically need your original license, Form 9, medical fitness certificate (Form 1-A for commercial), address proof, and passport-size photos. Visit our Documents page for a complete checklist.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-trigger" onclick="toggleFAQ(this)">
                     Can I renew an expired driving license?
                     <span class="faq-trigger-icon"><i class="fas fa-plus"></i></span>
                 </button>
                 <div class="faq-body">
                     <p>Yes! Expired licenses can be renewed. If expired for less than 5 years, a standard renewal applies. If expired beyond 5 years, a fresh driving test may be required. We guide you through both processes.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-trigger" onclick="toggleFAQ(this)">
-                    What is an International Driving Permit?
-                    <span class="faq-trigger-icon"><i class="fas fa-plus"></i></span>
-                </button>
-                <div class="faq-body">
-                    <p>An International Driving Permit (IDP) is a translation of your Indian driving license recognized in 185 countries. It is valid for 1 year. You must carry both your IDP and original Indian license when driving abroad.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -430,19 +535,103 @@
     </div>
 </section>
 
-<!-- ========== CTA BANNER ========== -->
+<!-- ========== CTA SHOWCASE BANNER ========== -->
 <section class="cta-section">
     <div class="container">
-        <div class="cta-content animate-on-scroll">
-            <h2>Ready to Renew? Book Your Appointment Today</h2>
-            <p>Don't let an expired license hold you back. Our experts are ready to assist you with fast, reliable, and hassle-free documentation services.</p>
-            <div class="cta-btns">
-                <a href="contact.html" class="btn btn-primary btn-lg">
-                    <i class="fas fa-calendar-check"></i> Book Now
-                </a>
-                <a href="services.html" class="btn btn-outline-light btn-lg">
-                    View All Services
-                </a>
+        <div class="cta-banner-card animate-on-scroll">
+            <div class="cta-grid-pattern"></div>
+            <!-- Left Column: Copy & Actions -->
+            <div class="cta-col-text">
+                <div class="cta-pill-badge">
+                    <span class="cta-pulse-dot"></span>
+                    <span>Fast-Track RTO Documentation</span>
+                </div>
+                <h2 class="cta-heading">
+                    Ready to Renew? <br>
+                    <span class="cta-heading-highlight">Get Your License in 3–7 Days</span>
+                </h2>
+                <p class="cta-desc">
+                    Skip long RTO queues, confusing paperwork, and avoid application rejections. Our government-approved documentation specialists manage the entire process from start to finish.
+                </p>
+                <div class="cta-action-row">
+                    <a href="contact.html" class="btn btn-cta-primary">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Book Appointment</span>
+                        <i class="fas fa-arrow-right cta-btn-arrow"></i>
+                    </a>
+                    <a href="services.html" class="btn btn-cta-secondary">
+                        <i class="fas fa-layer-group"></i>
+                        <span>Explore All Services</span>
+                    </a>
+                </div>
+                <div class="cta-trust-row">
+                    <div class="cta-trust-item">
+                        <i class="fas fa-shield-halved"></i>
+                        <span>100% Government Approved</span>
+                    </div>
+                    <div class="cta-trust-item">
+                        <i class="fas fa-bolt"></i>
+                        <span>Express 3–7 Day Delivery</span>
+                    </div>
+                  
+                </div>
+            </div>
+
+            <!-- Right Column: Visual Preview Card -->
+            <div class="cta-col-visual">
+                <div class="cta-preview-card">
+                    <div class="cta-preview-header">
+                        <div class="cta-preview-badge">
+                            <i class="fas fa-shield-check"></i> Verified Service
+                        </div>
+                        <div class="cta-live-slots">
+                            <span class="pulse-indicator"></span> Slots Available Today
+                        </div>
+                    </div>
+                    <div class="cta-preview-title">
+                        <i class="fas fa-id-card"></i>
+                        <div>
+                            <strong>Express Renewal Package</strong>
+                            <span>Light Motor Vehicle (LMV)</span>
+                        </div>
+                    </div>
+                    <div class="cta-preview-features">
+                        <div class="cta-pf-item">
+                            <div class="cta-pf-icon"><i class="fas fa-check"></i></div>
+                            <div class="cta-pf-text">
+                                <strong>Pre-Submission Verification</strong>
+                                <span>Zero error check to prevent RTO rejections</span>
+                            </div>
+                        </div>
+                        <div class="cta-pf-item">
+                            <div class="cta-pf-icon"><i class="fas fa-check"></i></div>
+                            <div class="cta-pf-text">
+                                <strong>Medical Certificate (Form 1-A)</strong>
+                                <span>Certified doctor assistance arranged</span>
+                            </div>
+                        </div>
+                        <div class="cta-pf-item">
+                            <div class="cta-pf-icon"><i class="fas fa-check"></i></div>
+                            <div class="cta-pf-text">
+                                <strong>Doorstep Document Delivery</strong>
+                                <span>Renewed license securely delivered home</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cta-preview-footer">
+                        <div class="cta-pf-rating">
+                            <div class="cta-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.9/5 from 1,420+ client reviews</span>
+                        </div>
+                        <a href="contact.html" class="cta-preview-link">Book Now <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -452,5 +641,87 @@
 <div id="main-footer"></div>
 
 <script src="components.js"></script>
+<script>
+/* ─── HERO SLIDER CONTROLLER (3 SLIDES, 5s TIMER) ─── */
+(function initHeroSlider() {
+    let currentSlide = 0;
+    const totalSlides = 3;
+    const slideDuration = 5000;
+    let slideTimer = null;
+
+    window.setHeroSlide = function(index) {
+        if (index < 0) index = totalSlides - 1;
+        if (index >= totalSlides) index = 0;
+
+        currentSlide = index;
+
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.slider-dot');
+
+        slides.forEach((slide, idx) => {
+            if (idx === currentSlide) {
+                slide.classList.add('active');
+            } else {
+                slide.classList.remove('active');
+            }
+        });
+
+        dots.forEach((dot, idx) => {
+            if (idx === currentSlide) {
+                dot.classList.add('active');
+                const prog = dot.querySelector('.dot-progress');
+                if (prog) {
+                    prog.style.transition = 'none';
+                    prog.style.width = '0%';
+                    setTimeout(() => {
+                        prog.style.transition = 'width 5s linear';
+                        prog.style.width = '100%';
+                    }, 20);
+                }
+            } else {
+                dot.classList.remove('active');
+                const prog = dot.querySelector('.dot-progress');
+                if (prog) {
+                    prog.style.transition = 'none';
+                    prog.style.width = '0%';
+                }
+            }
+        });
+
+        resetTimer();
+    };
+
+    window.moveHeroSlide = function(direction) {
+        setHeroSlide(currentSlide + direction);
+    };
+
+    function startTimer() {
+        stopTimer();
+        slideTimer = setInterval(() => {
+            setHeroSlide(currentSlide + 1);
+        }, slideDuration);
+    }
+
+    function stopTimer() {
+        if (slideTimer) {
+            clearInterval(slideTimer);
+            slideTimer = null;
+        }
+    }
+
+    function resetTimer() {
+        startTimer();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const sliderContainer = document.getElementById('hero-slider');
+        if (sliderContainer) {
+            sliderContainer.addEventListener('mouseenter', stopTimer);
+            sliderContainer.addEventListener('mouseleave', startTimer);
+        }
+        setHeroSlide(0);
+    });
+})();
+</script>
 </body>
 </html>

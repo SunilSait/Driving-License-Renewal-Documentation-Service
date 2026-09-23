@@ -21,7 +21,7 @@
     </div>
     <div class="hero-inner-overlay"></div>
     <div class="container hero-inner-content animate-on-scroll">
-        <div class="section-label" style="background:rgba(201,162,39,0.15);border-color:rgba(201,162,39,0.3);color:var(--secondary);margin-bottom:1rem;">
+        <div class="section-label section-label-on-dark" style="margin-bottom:1rem;">
             <i class="fas fa-file-text"></i> Documents
         </div>
         <h1>Documents Required</h1>
@@ -35,7 +35,7 @@
 </section>
 
 <!-- ========== INFO BANNER ========== -->
-<div style="background:var(--secondary-light);border-bottom:2px solid rgba(201,162,39,0.25);padding:1rem 0;">
+<div style="background:var(--secondary-light);border-bottom:2px solid var(--border-default);padding:1rem 0;">
     <div class="container">
         <div style="display:flex;align-items:center;gap:0.75rem;justify-content:center;flex-wrap:wrap;text-align:center;">
             <i class="fas fa-circle-info" style="color:var(--secondary);font-size:1.125rem;flex-shrink:0;"></i>
@@ -307,12 +307,37 @@
 <!-- ========== CTA ========== -->
 <section class="cta-section">
     <div class="container">
-        <div class="cta-content animate-on-scroll">
-            <h2>Have All Your Documents Ready?</h2>
-            <p>Book your appointment now and our team will handle the rest — from document review to delivery.</p>
-            <div class="cta-btns">
-                <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-calendar-check"></i> Book Appointment</a>
-                <a href="fees.html" class="btn btn-outline-light btn-lg">Check Fees</a>
+        <div class="cta-card-split animate-on-scroll">
+            <div class="cta-grid-pattern"></div>
+            <!-- Left: Text Content -->
+            <div class="cta-split-text">
+                <div class="cta-pill-badge">
+                    <span class="cta-pulse-dot"></span>
+                    <span>Document Pre-Verification</span>
+                </div>
+                <h2>Have All Your Documents Ready?</h2>
+                <p>Book your appointment now and our certified team will handle the rest — from comprehensive document review to final RTO submission and home delivery.</p>
+                <div class="cta-split-actions">
+                    <a href="contact.html" class="btn btn-cta-primary">
+                        <i class="fas fa-calendar-check"></i> Book Appointment
+                        <i class="fas fa-arrow-right cta-btn-arrow"></i>
+                    </a>
+                    <a href="fees.html" class="btn btn-cta-secondary">
+                        <i class="fas fa-calculator"></i> Check Fees
+                    </a>
+                </div>
+                <div class="cta-split-trust">
+                    <span class="cta-split-trust-item"><i class="fas fa-check-circle"></i> Zero Rejection Guarantee</span>
+                    <span class="cta-split-trust-item"><i class="fas fa-truck-fast"></i> Doorstep Pickup & Return</span>
+                </div>
+            </div>
+
+            <!-- Right: Image with Badge -->
+            <div class="cta-split-img-wrapper">
+                <img src="assets/images/cta-documents.jpg" alt="Driving license renewal documentation assistance" class="cta-split-img" loading="lazy">
+                <div class="cta-img-badge">
+                    <i class="fas fa-shield-check"></i> Verified RTO Documentation
+                </div>
             </div>
         </div>
     </div>

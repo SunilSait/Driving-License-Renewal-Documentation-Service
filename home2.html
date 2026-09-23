@@ -32,14 +32,25 @@
         }
         .doc-preview-badge {
             position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: var(--secondary);
-            color: var(--primary);
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 0.4rem 0.875rem;
+            top: 1.25rem;
+            right: 1.25rem;
+            background: linear-gradient(135deg, #2563eb, #4f46e5);
+            color: #ffffff;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            padding: 0.45rem 0.95rem;
             border-radius: var(--radius-full);
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            z-index: 2;
+        }
+        .doc-preview-badge i {
+            color: #ffffff;
+            font-size: 0.85rem;
         }
         .doc-checklist-preview {
             display: flex;
@@ -61,7 +72,7 @@
             border-color: var(--secondary);
             background: var(--secondary-light);
         }
-        .dark .doc-check-item:hover { background: rgba(201,162,39,0.06); }
+        .dark .doc-check-item:hover { background: rgba(79,70,229,0.08); }
         .doc-check-item i { color: var(--green); font-size: 1rem; flex-shrink: 0; }
         .doc-check-item span { font-size: 0.9rem; font-weight: 500; color: var(--text-heading); }
 
@@ -112,76 +123,169 @@
 <div id="main-nav"></div>
 
 <!-- ========== HERO — CENTERED WITH RINGS ========== -->
-<section class="hero-h2">
-    <!-- Animated rings background -->
-    <div class="hero-h2-rings" aria-hidden="true">
-        <div class="hero-h2-ring hero-h2-ring-1"></div>
-        <div class="hero-h2-ring hero-h2-ring-2"></div>
-        <div class="hero-h2-ring hero-h2-ring-3"></div>
+<!-- ========== HERO — 3-SLIDE BANNER CAROUSEL (5s SWITCH) ========== -->
+<section class="hero-h2" id="home2-hero-slider">
+    <!-- Deep Aurora & Mesh Geometric Background -->
+    <div class="hero-aurora-bg" aria-hidden="true"></div>
+    <div class="hero-mesh-overlay" aria-hidden="true"></div>
+    <div class="hero-spotlight-orb orb-1" aria-hidden="true"></div>
+    <div class="hero-spotlight-orb orb-2" aria-hidden="true"></div>
+
+    <!-- Floating Glass Poly Cards Background -->
+    <div class="hero-poly-shapes" aria-hidden="true">
+        <div class="poly-card poly-card-1"></div>
+        <div class="poly-card poly-card-2"></div>
+        <div class="hero-particles">
+            <div class="particle p1"></div>
+            <div class="particle p2"></div>
+            <div class="particle p3"></div>
+            <div class="particle p4"></div>
+            <div class="particle p5"></div>
+        </div>
     </div>
-    <div class="hero-h2-glow" aria-hidden="true"></div>
 
-    <div class="hero-h2-content animate-on-scroll">
-        <div class="hero-h2-eyebrow">
-            <i class="fas fa-certificate"></i>
-            Premium Documentation Service
-        </div>
-        <h1>Your License, Our Responsibility</h1>
-        <p>Expert-led, government-approved driving license and vehicle documentation services. Renew, update, and apply — faster than ever before.</p>
+    <div class="h2-hero-slides-wrapper">
 
-        <div class="hero-h2-cta">
-            <a href="contact.html" class="btn btn-primary btn-lg">
-                <i class="fas fa-calendar-check"></i> Book Appointment
-            </a>
-            <a href="documents.html" class="btn btn-outline-light btn-lg">
-                View Checklists
-            </a>
-        </div>
-
-        <!-- Bento Grid -->
-        <div class="bento-grid">
-            <!-- Large card — License Renewal -->
-            <div class="bento-card bento-large">
-                <div style="height:180px;overflow:hidden;">
-                    <img src="assets/images/hero-main.jpg" alt="License renewal service" class="bento-card-img" onerror="this.parentElement.style.background='linear-gradient(135deg,rgba(30,58,95,0.4),rgba(201,162,39,0.2))'; this.style.display='none';">
+        <!-- SLIDE 1: License Renewal -->
+        <div class="h2-hero-slide active" data-h2-slide="0">
+            <div class="h2-slide-grid container">
+                <div class="h2-slide-text">
+                    <div class="hero-h2-eyebrow">
+                        <span class="live-pulse-dot"></span> <i class="fas fa-certificate"></i> Premium Documentation Service
+                    </div>
+                    <h1>Your License, <span class="hero-h2-accent">Our Responsibility</span></h1>
+                    <p>Expert-led, government-approved driving license renewal services. Renew, update, and apply with complete peace of mind.</p>
+                    <div class="hero-cta-group">
+                        <a href="contact.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-calendar-check"></i> Book Appointment
+                        </a>
+                        <a href="documents.html" class="btn btn-outline-light btn-lg">
+                            View Checklists
+                        </a>
+                    </div>
                 </div>
-                <div class="bento-card-body">
-                    <h4><i class="fas fa-rotate" style="color:var(--secondary);margin-right:0.5rem;"></i> License Renewal</h4>
-                    <p>Complete renewal for LMV, HMV, and commercial licenses. 3–5 day processing.</p>
+
+                <div class="h2-slide-img-card">
+                    <img src="assets/images/hero-main.jpg" alt="Driving license renewal documentation consultation" loading="eager" onerror="this.parentElement.classList.add('img-placeholder'); this.style.display='none';">
+                    <div class="h2-float-chip top-right">
+                        <i class="fas fa-bolt" style="color:#F59E0B;"></i> <span>24-48h Fast Track</span>
+                    </div>
+                    <div class="h2-slide-img-badge">
+                        <i class="fas fa-circle-check"></i> RTO Approved & Verified
+                    </div>
                 </div>
-            </div>
-
-            <!-- Large card — RC Renewal -->
-            <div class="bento-card bento-large">
-                <div style="height:180px;overflow:hidden;">
-                    <img src="assets/images/hero-rto.jpg" alt="RC renewal service" class="bento-card-img" onerror="this.parentElement.style.background='linear-gradient(135deg,rgba(30,58,95,0.3),rgba(201,162,39,0.15))'; this.style.display='none';">
-                </div>
-                <div class="bento-card-body">
-                    <h4><i class="fas fa-car" style="color:var(--secondary);margin-right:0.5rem;"></i> RC Renewal</h4>
-                    <p>Registration certificate renewal for all vehicle types. Doorstep collection available.</p>
-                </div>
-            </div>
-
-            <!-- Stat — Clients -->
-            <div class="bento-card bento-medium bento-stat-card">
-                <span class="bento-stat-num" data-count="12500" data-suffix="+">0+</span>
-                <span class="bento-stat-label">Happy Clients</span>
-            </div>
-
-            <!-- Stat — Success Rate -->
-            <div class="bento-card bento-medium bento-stat-card">
-                <span class="bento-stat-num" data-count="98" data-suffix="%">0%</span>
-                <span class="bento-stat-label">Success Rate</span>
-            </div>
-
-            <!-- Stat — Days -->
-            <div class="bento-card bento-medium bento-stat-card">
-                <span class="bento-stat-num" data-count="3" data-suffix=" Days">0</span>
-                <span class="bento-stat-label">Avg Processing</span>
             </div>
         </div>
+
+        <!-- SLIDE 2: International Driving Permit -->
+        <div class="h2-hero-slide" data-h2-slide="1">
+            <div class="h2-slide-grid container">
+                <div class="h2-slide-text">
+                    <div class="hero-h2-eyebrow">
+                        <span class="live-pulse-dot"></span> <i class="fas fa-plane"></i> Fast-Track IDP Assistance
+                    </div>
+                    <h1>Drive Globally with <span class="hero-h2-accent">Official Permits</span></h1>
+                    <p>Get your International Driving Permit issued in as fast as 24–48 hours. Recognized across 150+ countries with complete paperwork assistance.</p>
+                    <div class="hero-cta-group">
+                        <a href="contact.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-passport"></i> Apply for IDP
+                        </a>
+                        <a href="services.html#idp" class="btn btn-outline-light btn-lg">
+                            View Requirements
+                        </a>
+                    </div>
+                </div>
+
+                <div class="h2-slide-img-card">
+                    <img src="assets/images/service-idp.jpg" alt="International Driving Permit assistance" loading="lazy" onerror="this.parentElement.classList.add('img-placeholder'); this.style.display='none';">
+                    <div class="h2-float-chip top-right">
+                        <i class="fas fa-globe" style="color:#60A5FA;"></i> <span>150+ Countries</span>
+                    </div>
+                    <div class="h2-slide-img-badge">
+                        <i class="fas fa-passport"></i> Geneva Convention 1949
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: Doorstep Vehicle RC Renewal -->
+        <div class="h2-hero-slide" data-h2-slide="2">
+            <div class="h2-slide-grid container">
+                <div class="h2-slide-text">
+                    <div class="hero-h2-eyebrow">
+                        <span class="live-pulse-dot"></span> <i class="fas fa-truck-fast"></i> Doorstep Pickup & Return
+                    </div>
+                    <h1>Vehicle RC Renewal, <span class="hero-h2-accent">At Your Doorstep</span></h1>
+                    <p>No queuing at RTO counters. Our certified agents collect your documents from home, handle RTO filing, and deliver your renewed RC.</p>
+                    <div class="hero-cta-group">
+                        <a href="contact.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-car"></i> Renew RC Now
+                        </a>
+                        <a href="fees.html" class="btn btn-outline-light btn-lg">
+                            Check Pricing
+                        </a>
+                    </div>
+                </div>
+
+                <div class="h2-slide-img-card">
+                    <img src="assets/images/service-rc.jpg" alt="Vehicle RC renewal doorstep service" loading="lazy" onerror="this.parentElement.classList.add('img-placeholder'); this.style.display='none';">
+                    <div class="h2-float-chip top-right">
+                        <i class="fas fa-truck-fast" style="color:#34D399;"></i> <span>Doorstep Collection</span>
+                    </div>
+                    <div class="h2-slide-img-badge">
+                        <i class="fas fa-box"></i> 100% Guaranteed Filing
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="h2-slider-nav container">
+        <button class="slider-arrow h2-prev" aria-label="Previous Slide" onclick="moveH2HeroSlide(-1)">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="slider-dots">
+            <button class="slider-dot h2-dot active" onclick="setH2HeroSlide(0)" aria-label="Slide 1">
+                <span class="dot-progress"></span>
+            </button>
+            <button class="slider-dot h2-dot" onclick="setH2HeroSlide(1)" aria-label="Slide 2">
+                <span class="dot-progress"></span>
+            </button>
+            <button class="slider-dot h2-dot" onclick="setH2HeroSlide(2)" aria-label="Slide 3">
+                <span class="dot-progress"></span>
+            </button>
+        </div>
+        <button class="slider-arrow h2-next" aria-label="Next Slide" onclick="moveH2HeroSlide(1)">
+            <i class="fas fa-chevron-right"></i>
+        </button>
     </div>
 </section>
+
+<!-- ========== STATS BAR (2ND SECTION) ========== -->
+<div class="stats-bar">
+    <div class="container">
+        <div class="stats-bar-inner">
+            <div class="stats-bar-item">
+                <span class="stats-bar-num" data-count="12500" data-suffix="+">0+</span>
+                <span class="stats-bar-label">Licenses Renewed</span>
+            </div>
+            <div class="stats-bar-item">
+                <span class="stats-bar-num" data-count="98" data-suffix="%">0%</span>
+                <span class="stats-bar-label">Success Rate</span>
+            </div>
+            <div class="stats-bar-item">
+                <span class="stats-bar-num" data-count="8" data-suffix="+ Yrs">0</span>
+                <span class="stats-bar-label">In Business</span>
+            </div>
+            <div class="stats-bar-item">
+                <span class="stats-bar-num" data-count="5">0</span>
+                <span class="stats-bar-label">RTO Tie-ups</span>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- ========== FEATURES GRID (6 Cards, 3-Col) ========== -->
 <section class="features-section">
@@ -194,31 +298,16 @@
 
         <div class="features-grid">
             <div class="feature-card animate-on-scroll">
-                <div class="feature-icon"><i class="fas fa-user-shield"></i></div>
-                <h4>Government Approved</h4>
-                <p>All our processes are compliant with Motor Vehicles Act provisions and RTO regulations.</p>
-            </div>
-            <div class="feature-card animate-on-scroll animate-delay-1">
-                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-                <h4>Express Processing</h4>
-                <p>Urgent renewals completed in 24–48 hours through our priority submission channel.</p>
-            </div>
-            <div class="feature-card animate-on-scroll animate-delay-2">
                 <div class="feature-icon"><i class="fas fa-truck-fast"></i></div>
                 <h4>Doorstep Delivery</h4>
                 <p>Your renewed documents are dispatched via speed post directly to your registered address.</p>
             </div>
-            <div class="feature-card animate-on-scroll animate-delay-3">
-                <div class="feature-icon"><i class="fas fa-magnifying-glass-check"></i></div>
-                <h4>Pre-Submission Review</h4>
-                <p>Every document is reviewed by our experts before RTO submission to prevent rejections.</p>
-            </div>
-            <div class="feature-card animate-on-scroll animate-delay-4">
+            <div class="feature-card animate-on-scroll animate-delay-1">
                 <div class="feature-icon"><i class="fas fa-message"></i></div>
                 <h4>Live Status Updates</h4>
                 <p>Track your application in real-time with SMS and email notifications at each milestone.</p>
             </div>
-            <div class="feature-card animate-on-scroll animate-delay-5">
+            <div class="feature-card animate-on-scroll animate-delay-2">
                 <div class="feature-icon"><i class="fas fa-headset"></i></div>
                 <h4>Dedicated Support</h4>
                 <p>Your personal agent is just a call away throughout the entire documentation journey.</p>
@@ -254,11 +343,12 @@
             <div class="step-item">
                 <div class="step-circle">4</div>
                 <h4>Get Delivered</h4>
-                <p>Receive your renewed license at your doorstep — no RTO visit needed!</p>
+                <p>Receive your renewed license at your doorstep address — no RTO visit needed!</p>
             </div>
         </div>
     </div>
 </section>
+
 
 <!-- ========== DOCUMENT PREVIEW ========== -->
 <section class="doc-preview-section">
@@ -297,6 +387,129 @@
         </div>
     </div>
 </section>
+
+<!-- ========== GLOBAL IDP SHOWCASE WITH IMAGE ========== -->
+<section class="global-idp-section">
+    <div class="container">
+        <div class="global-idp-grid">
+            <!-- Left Content -->
+            <div class="global-idp-content animate-on-scroll">
+                <div class="section-label"><i class="fas fa-plane-departure"></i> Global Driving</div>
+                <h2>Drive Overseas Hassle-Free with Official IDP Assistance</h2>
+                <p>Planning a holiday, business trip, or relocation to Europe, the US, UK, UAE, or Asia? Drive legally overseas with an official International Driving Permit processed in just 48 hours.</p>
+
+                <div class="global-idp-badges">
+                    <div class="idp-badge-item">
+                        <i class="fas fa-globe-americas"></i>
+                        <div>
+                            <strong>150+ Countries</strong>
+                            <span>Recognized Worldwide</span>
+                        </div>
+                    </div>
+                    <div class="idp-badge-item">
+                        <i class="fas fa-bolt"></i>
+                        <div>
+                            <strong>48-Hour Turnaround</strong>
+                            <span>Express Processing</span>
+                        </div>
+                    </div>
+                    <div class="idp-badge-item">
+                        <i class="fas fa-file-shield"></i>
+                        <div>
+                            <strong>1 Year Validity</strong>
+                            <span>Official Geneva Convention</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="idp-cta-group" style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+                    <a href="contact.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-passport"></i> Apply for IDP Now
+                    </a>
+                    <a href="fees.html" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-circle-info"></i> IDP Requirements
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Image Container -->
+            <div class="global-idp-img-wrap animate-on-scroll animate-delay-1">
+                <img src="assets/images/service-idp.jpg" alt="International Driving Permit passport document" loading="lazy">
+                <div class="global-img-badge">
+                    <i class="fas fa-passport" style="color:var(--secondary);"></i>
+                    <span>Geneva Convention 1949 Authorized Translation</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== NEW SECTION 1: INSTANT FEE & DOCUMENT CALCULATOR ========== -->
+<section class="calc-section">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label"><i class="fas fa-calculator"></i> Instant Estimator</div>
+            <h2>Calculate Fees & Required Documents</h2>
+            <p>Select your service details below to instantly view government RTO fees, service timeline, and document checklists.</p>
+        </div>
+
+        <div class="calc-wrapper animate-on-scroll">
+            <div class="calc-options-group">
+                <div>
+                    <div class="calc-group-title">1. Select Service Type</div>
+                    <div class="calc-pills" id="calc-service-pills">
+                        <button class="calc-pill active" onclick="updateCalculator('renewal', this)"><i class="fas fa-rotate"></i> DL Renewal</button>
+                        <button class="calc-pill" onclick="updateCalculator('address', this)"><i class="fas fa-location-dot"></i> Address Change</button>
+                        <button class="calc-pill" onclick="updateCalculator('idp', this)"><i class="fas fa-globe"></i> International DL (IDP)</button>
+                        <button class="calc-pill" onclick="updateCalculator('rc', this)"><i class="fas fa-car"></i> Vehicle RC Renewal</button>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="calc-group-title">2. Select Vehicle Category</div>
+                    <div class="calc-pills" id="calc-vehicle-pills">
+                        <button class="calc-pill active" onclick="updateVehicleCategory('mcwg', this)"><i class="fas fa-motorcycle"></i> Two Wheeler (MCWG)</button>
+                        <button class="calc-pill" onclick="updateVehicleCategory('lmv', this)"><i class="fas fa-car-side"></i> Four Wheeler (LMV)</button>
+                        <button class="calc-pill" onclick="updateVehicleCategory('commercial', this)"><i class="fas fa-truck"></i> Commercial / Heavy</button>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="calc-group-title">3. Expiry Status</div>
+                    <div class="calc-pills">
+                        <button class="calc-pill active" onclick="updateExpiryStatus('normal', this)"><i class="fas fa-clock"></i> Expired &lt; 1 Year</button>
+                        <button class="calc-pill" onclick="updateExpiryStatus('grace', this)"><i class="fas fa-circle-exclamation"></i> Expired &gt; 1 Year (+ Grace Fee)</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calc-result-card">
+                <div class="calc-result-header">
+                    <div>
+                        <span style="font-size:0.8125rem;color:#94a3b8;font-weight:600;display:block;margin-bottom:0.3rem;">ESTIMATED TOTAL FEE</span>
+                        <div class="calc-result-price" id="calc-total-price-h2">₹750</div>
+                    </div>
+                    <div class="calc-result-turnaround" id="calc-turnaround-badge-h2">
+                        <i class="fas fa-bolt"></i> 3–5 Working Days
+                    </div>
+                </div>
+
+                <span style="font-size:0.8125rem;color:#94a3b8;font-weight:600;display:block;margin-bottom:0.75rem;">MANDATORY DOCUMENTS REQUIRED:</span>
+                <div class="calc-docs-list" id="calc-docs-list-h2">
+                    <div class="calc-doc-item"><i class="fas fa-circle-check"></i> Original Driving License & Copy</div>
+                    <div class="calc-doc-item"><i class="fas fa-circle-check"></i> Form 9 Application for Renewal</div>
+                    <div class="calc-doc-item"><i class="fas fa-circle-check"></i> Form 1-A Medical Fitness Certificate</div>
+                    <div class="calc-doc-item"><i class="fas fa-circle-check"></i> Aadhaar Card Address Proof</div>
+                </div>
+
+                <a href="contact.html" class="btn btn-primary w-full" style="justify-content:center;margin-top:0.5rem;">
+                    <i class="fas fa-arrow-right"></i> Book Appointment for This Package
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <!-- ========== PRICING TEASER ========== -->
 <section class="pricing-section">
@@ -361,157 +574,264 @@
     </div>
 </section>
 
-<!-- ========== TESTIMONIALS MARQUEE ========== -->
-<section class="testimonials-marquee">
+<!-- ========== INTERACTIVE FEE & TIMELINE CALCULATOR ========== -->
+<section class="calc-section">
     <div class="container">
-        <div class="section-header animate-on-scroll">
+        <div class="section-header text-center animate-on-scroll">
+            <div class="section-label"><i class="fas fa-calculator"></i> Quick Estimation</div>
+            <h2>Interactive RTO Fee & Timeline Calculator</h2>
+            <p style="color:var(--text-muted);margin-top:0.5rem;">Select your service and speed to calculate estimated fees, required documents, and completion time.</p>
+        </div>
+
+        <div class="calc-box-grid animate-on-scroll">
+            <!-- Left: Options Selector -->
+            <div class="calc-options-card">
+                <div class="calc-field-group">
+                    <label class="calc-label"><i class="fas fa-list-check"></i> Select Required Service:</label>
+                    <div class="calc-pills-group" id="servicePills">
+                        <button type="button" class="calc-pill active" onclick="selectCalcService(this, 'Driving License Renewal', 499, '3–5 Days', '2 Documents Required (Form 9 & Original DL)')">DL Renewal</button>
+                        <button type="button" class="calc-pill" onclick="selectCalcService(this, 'International Driving Permit', 799, '48 Hours', '3 Documents Required (Passport, Visa & DL)')">International Permit (IDP)</button>
+                        <button type="button" class="calc-pill" onclick="selectCalcService(this, 'Vehicle RC Renewal', 699, '3–5 Days', '3 Documents Required (RC Book, Fitness & Ins.)')">Vehicle RC Renewal</button>
+                        <button type="button" class="calc-pill" onclick="selectCalcService(this, 'RTO Address Change', 499, '3 Days', '2 Documents Required (Aadhaar & DL)')">Address Change</button>
+                    </div>
+                </div>
+
+                <div class="calc-field-group" style="margin-top:1.75rem;">
+                    <label class="calc-label"><i class="fas fa-truck-fast"></i> Processing Speed:</label>
+                    <div class="calc-pills-group" id="speedPills">
+                        <button type="button" class="calc-pill active" onclick="selectCalcSpeed(this, 0, 'Standard')">Standard Processing (Regular Queue)</button>
+                        <button type="button" class="calc-pill" onclick="selectCalcSpeed(this, 300, 'Express')">Express Priority (+ ₹300, Fast-Track Queue)</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Dynamic Result Card -->
+            <div class="calc-result-card">
+                <div class="calc-result-header">
+                    <span class="calc-result-badge"><i class="fas fa-circle-check"></i> Live Estimate</span>
+                    <h3 id="calcServiceTitle">Driving License Renewal</h3>
+                </div>
+
+                <div class="calc-metrics-row">
+                    <div class="calc-metric-item">
+                        <span class="metric-icon"><i class="fas fa-indian-rupee-sign"></i></span>
+                        <div class="metric-info">
+                            <span class="metric-label">Estimated Service Fee</span>
+                            <span class="metric-val" id="calcFeeVal">₹499 <small style="font-size:0.75rem;font-weight:400;color:var(--text-muted);">+ Govt Fee</small></span>
+                        </div>
+                    </div>
+
+                    <div class="calc-metric-item">
+                        <span class="metric-icon"><i class="fas fa-clock"></i></span>
+                        <div class="metric-info">
+                            <span class="metric-label">Estimated Timeline</span>
+                            <span class="metric-val" id="calcTimeVal">3–5 Days</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calc-docs-summary">
+                    <i class="fas fa-file-circle-check" style="color:var(--secondary);"></i>
+                    <span id="calcDocsSummaryVal">2 Documents Required (Form 9 & Original DL)</span>
+                </div>
+
+                <a href="contact.html" class="btn btn-primary btn-lg w-full" style="margin-top:1.5rem;justify-content:center;">
+                    <i class="fas fa-calendar-check"></i> Book This Service Package
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ========== TESTIMONIALS SLIDER ========== -->
+<section class="testimonials-slider-section">
+    <div class="container">
+        <div class="section-header text-center animate-on-scroll">
             <div class="section-label"><i class="fas fa-quote-left"></i> Reviews</div>
             <h2>Voices of Our Happy Clients</h2>
+            <p style="color:var(--text-muted);margin-top:0.5rem;">Read real experiences from thousands of satisfied vehicle owners across Tamil Nadu.</p>
         </div>
-    </div>
 
-    <div style="overflow:hidden;padding:0.5rem 0;">
-        <div class="marquee-track">
-            <!-- Cards x2 for seamless loop -->
-            <div class="marquee-card">
-                <div class="marquee-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="marquee-text">"Renewed my license without stepping out of home. Truly impressive service!"</p>
-                <div class="marquee-author">
-                    <div style="width:38px;height:38px;border-radius:50%;background:var(--primary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-user" style="color:var(--primary);"></i></div>
-                    <div><span class="marquee-name">Anitha R.</span><span class="marquee-loc">Chennai</span></div>
-                </div>
-            </div>
-            <div class="marquee-card">
-                <div class="marquee-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="marquee-text">"Got my IDP in 2 days for my Europe trip. Excellent and knowledgeable team!"</p>
-                <div class="marquee-author">
-                    <div style="width:38px;height:38px;border-radius:50%;background:var(--secondary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-user" style="color:var(--secondary);"></i></div>
-                    <div><span class="marquee-name">Karthik M.</span><span class="marquee-loc">Coimbatore</span></div>
-                </div>
-            </div>
-            <div class="marquee-card">
-                <div class="marquee-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="marquee-text">"RC renewal was smooth and fast. Pickup and delivery at my home — zero hassle."</p>
-                <div class="marquee-author">
-                    <div style="width:38px;height:38px;border-radius:50%;background:var(--primary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-user" style="color:var(--primary);"></i></div>
-                    <div><span class="marquee-name">Pradeep V.</span><span class="marquee-loc">Madurai</span></div>
-                </div>
-            </div>
-            <div class="marquee-card">
-                <div class="marquee-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i></div>
-                <p class="marquee-text">"Address change on my license done in 3 days. Very professional and honest team."</p>
-                <div class="marquee-author">
-                    <div style="width:38px;height:38px;border-radius:50%;background:var(--secondary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-user" style="color:var(--secondary);"></i></div>
-                    <div><span class="marquee-name">Sudha L.</span><span class="marquee-loc">Salem</span></div>
-                </div>
-            </div>
-            <div class="marquee-card">
-                <div class="marquee-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="marquee-text">"Perfect service! They handled everything. Didn't need to visit the RTO even once."</p>
-                <div class="marquee-author">
-                    <div style="width:38px;height:38px;border-radius:50%;background:var(--primary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-user" style="color:var(--primary);"></i></div>
-                    <div><span class="marquee-name">Ramesh N.</span><span class="marquee-loc">Trichy</span></div>
-                </div>
-            </div>
-            <!-- Duplicate for loop -->
-            <div class="marquee-card">
-                <div class="marquee-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="marquee-text">"Renewed my license without stepping out of home. Truly impressive service!"</p>
-                <div class="marquee-author">
-                    <div style="width:38px;height:38px;border-radius:50%;background:var(--primary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-user" style="color:var(--primary);"></i></div>
-                    <div><span class="marquee-name">Anitha R.</span><span class="marquee-loc">Chennai</span></div>
-                </div>
-            </div>
-            <div class="marquee-card">
-                <div class="marquee-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="marquee-text">"Got my IDP in 2 days for my Europe trip. Excellent and knowledgeable team!"</p>
-                <div class="marquee-author">
-                    <div style="width:38px;height:38px;border-radius:50%;background:var(--secondary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-user" style="color:var(--secondary);"></i></div>
-                    <div><span class="marquee-name">Karthik M.</span><span class="marquee-loc">Coimbatore</span></div>
-                </div>
-            </div>
-            <div class="marquee-card">
-                <div class="marquee-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="marquee-text">"RC renewal was smooth and fast. Pickup and delivery at my home — zero hassle."</p>
-                <div class="marquee-author">
-                    <div style="width:38px;height:38px;border-radius:50%;background:var(--primary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-user" style="color:var(--primary);"></i></div>
-                    <div><span class="marquee-name">Pradeep V.</span><span class="marquee-loc">Madurai</span></div>
-                </div>
-            </div>
-            <div class="marquee-card">
-                <div class="marquee-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i></div>
-                <p class="marquee-text">"Address change on my license done in 3 days. Very professional and honest team."</p>
-                <div class="marquee-author">
-                    <div style="width:38px;height:38px;border-radius:50%;background:var(--secondary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-user" style="color:var(--secondary);"></i></div>
-                    <div><span class="marquee-name">Sudha L.</span><span class="marquee-loc">Salem</span></div>
-                </div>
-            </div>
-            <div class="marquee-card">
-                <div class="marquee-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="marquee-text">"Perfect service! They handled everything. Didn't need to visit the RTO even once."</p>
-                <div class="marquee-author">
-                    <div style="width:38px;height:38px;border-radius:50%;background:var(--primary-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-user" style="color:var(--primary);"></i></div>
-                    <div><span class="marquee-name">Ramesh N.</span><span class="marquee-loc">Trichy</span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+        <div class="testimonial-slider-container">
+            <!-- Slider Track -->
+            <div class="testimonial-slides-track" id="testimonialTrack">
+                <!-- Slide 1 -->
+                <div class="testimonial-slide active">
+                    <div class="testimonial-slide-grid">
+                        <div class="testimonial-modern-card">
+                            <div class="card-quote-badge"><i class="fas fa-quote-right"></i></div>
+                            <div class="testimonial-header">
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    <span class="rating-num">5.0</span>
+                                </div>
+                                <span class="verified-badge"><i class="fas fa-circle-check"></i> Verified</span>
+                            </div>
+                            <p class="testimonial-body">"Renewed my license without stepping out of home. The document pickup and door delivery was seamless! Truly impressive service!"</p>
+                            <div class="testimonial-footer">
+                                <div class="author-avatar-badge primary">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Anitha R.</h4>
+                                    <span class="author-meta">DL Renewal • Chennai</span>
+                                </div>
+                            </div>
+                        </div>
+                        
 
-<!-- ========== STATS BAR ========== -->
-<div class="stats-bar">
-    <div class="container">
-        <div class="stats-bar-inner">
-            <div class="stats-bar-item">
-                <span class="stats-bar-num" data-count="12500" data-suffix="+">0+</span>
-                <span class="stats-bar-label">Licenses Renewed</span>
-            </div>
-            <div class="stats-bar-item">
-                <span class="stats-bar-num" data-count="98" data-suffix="%">0%</span>
-                <span class="stats-bar-label">Success Rate</span>
-            </div>
-            <div class="stats-bar-item">
-                <span class="stats-bar-num" data-count="8" data-suffix="+ Yrs">0</span>
-                <span class="stats-bar-label">In Business</span>
-            </div>
-            <div class="stats-bar-item">
-                <span class="stats-bar-num" data-count="5">0</span>
-                <span class="stats-bar-label">RTO Tie-ups</span>
-            </div>
-        </div>
-    </div>
-</div>
+                        <div class="testimonial-modern-card">
+                            <div class="card-quote-badge"><i class="fas fa-quote-right"></i></div>
+                            <div class="testimonial-header">
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    <span class="rating-num">5.0</span>
+                                </div>
+                                <span class="verified-badge"><i class="fas fa-circle-check"></i> Verified</span>
+                            </div>
+                            <p class="testimonial-body">"RC renewal was smooth and fast. Pickup and delivery at my home address — zero hassle and total peace of mind."</p>
+                            <div class="testimonial-footer">
+                                <div class="author-avatar-badge primary">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Pradeep V.</h4>
+                                    <span class="author-meta">RC Renewal • Madurai</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<!-- ========== PARTNERS ========== -->
-<section class="partners-section">
-    <div class="container">
-        <div class="partners-label">Recognized & Authorized By</div>
-        <div class="partners-row">
-            <span class="partner-name">Ministry of Road Transport</span>
-            <span class="partner-name">State RTO Authority</span>
-            <span class="partner-name">National Automobile Club</span>
-            <span class="partner-name">Federation of Motor Vehicle</span>
-            <span class="partner-name">DigiLocker Approved</span>
+                <!-- Slide 2 -->
+                <div class="testimonial-slide">
+                    <div class="testimonial-slide-grid">
+                        <div class="testimonial-modern-card">
+                            <div class="card-quote-badge"><i class="fas fa-quote-right"></i></div>
+                            <div class="testimonial-header">
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i>
+                                    <span class="rating-num">4.8</span>
+                                </div>
+                                <span class="verified-badge"><i class="fas fa-circle-check"></i> Verified</span>
+                            </div>
+                            <p class="testimonial-body">"Address change on my license done in 3 days. Very professional staff and honest updates throughout the process."</p>
+                            <div class="testimonial-footer">
+                                <div class="author-avatar-badge secondary">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Sudha L.</h4>
+                                    <span class="author-meta">Address Change • Salem</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-modern-card featured">
+                            <div class="card-quote-badge"><i class="fas fa-quote-right"></i></div>
+                            <div class="testimonial-header">
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    <span class="rating-num">5.0</span>
+                                </div>
+                                <span class="verified-badge"><i class="fas fa-circle-check"></i> Verified</span>
+                            </div>
+                            <p class="testimonial-body">"Perfect service! They handled everything end-to-end. Didn't need to stand in long RTO queues even once."</p>
+                            <div class="testimonial-footer">
+                                <div class="author-avatar-badge primary">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Ramesh N.</h4>
+                                    <span class="author-meta">DL Duplicate • Trichy</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider Navigation -->
+            <div class="testimonial-controls">
+                <button class="testi-btn testi-prev" onclick="moveTestimonialSlide(-1)" aria-label="Previous Reviews">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <div class="testi-dots" id="testiDots">
+                    <span class="testi-dot active" onclick="goToTestimonialSlide(0)"></span>
+                    <span class="testi-dot" onclick="goToTestimonialSlide(1)"></span>
+                </div>
+                <button class="testi-btn testi-next" onclick="moveTestimonialSlide(1)" aria-label="Next Reviews">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- ========== CTA — GLASSMORPHISM ========== -->
-<section class="cta-glass-section">
+
+
+<!-- ========== CTA — DISTINCT BENTO SHOWCASE ========== -->
+<section class="cta-section">
     <div class="container">
-        <div class="cta-glass-card animate-on-scroll">
-            <div class="section-label" style="color:var(--secondary);background:rgba(201,162,39,0.12);border-color:rgba(201,162,39,0.25);margin-bottom:1.25rem;">
-                <i class="fas fa-rocket"></i> Get Started Today
+        <div class="cta-h2-card animate-on-scroll">
+            <div class="cta-grid-pattern"></div>
+            <!-- Left Column: Copy & Benefits -->
+            <div class="cta-h2-content">
+                <div class="cta-pill-badge" style="background:rgba(30,64,175,0.3);border-color:rgba(96,165,250,0.35);">
+                    <span class="cta-pulse-dot"></span>
+                    <span>Exclusive Doorstep Service</span>
+                </div>
+                <h2 class="cta-h2-heading">
+                    Renew Your License <br>
+                    <span class="cta-h2-highlight">Without Stepping Out</span>
+                </h2>
+                <p class="cta-h2-desc">
+                    Experience the modern way to handle vehicle & license documentation. Our certified agents collect your documents, manage RTO counter submissions, and deliver your renewed smart card directly to your doorstep.
+                </p>
+                <div class="cta-h2-benefits-grid">
+                    <div class="cta-h2-benefit-item">
+                        <i class="fas fa-bolt"></i>
+                        <span>Express 3–7 Day Turnaround</span>
+                    </div>
+                    <div class="cta-h2-benefit-item">
+                        <i class="fas fa-shield-halved"></i>
+                        <span>100% Government Approved</span>
+                    </div>
+                    <div class="cta-h2-benefit-item">
+                        <i class="fas fa-house-user"></i>
+                        <span>Doorstep Pickup & Return</span>
+                    </div>
+                    <div class="cta-h2-benefit-item">
+                        <i class="fas fa-phone-volume"></i>
+                        <span>Dedicated Case Manager</span>
+                    </div>
+                </div>
+                <div class="cta-action-row">
+                    <a href="contact.html" class="btn btn-cta-primary">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Book Appointment</span>
+                        <i class="fas fa-arrow-right cta-btn-arrow"></i>
+                    </a>
+                    <a href="fees.html" class="btn btn-cta-secondary">
+                        <i class="fas fa-calculator"></i>
+                        <span>Check Fees</span>
+                    </a>
+                </div>
             </div>
-            <h2>Stop Waiting, Start Renewing</h2>
-            <p>Join thousands of satisfied clients who trust DriveSure for their most important documents. Book your appointment in under 2 minutes.</p>
-            <div class="cta-btns">
-                <a href="contact.html" class="btn btn-primary btn-lg">
-                    <i class="fas fa-calendar-check"></i> Book Appointment
-                </a>
-                <a href="fees.html" class="btn btn-outline-light btn-lg">
-                    View Fees
-                </a>
+
+            <!-- Right Column: Real Photograph with Floating Badges -->
+            <div class="cta-h2-visual-wrapper">
+                <img src="assets/images/cta-home2.jpg" alt="Happy customer with renewed driving license" class="cta-h2-img" loading="lazy">
+                <div class="cta-h2-float-badge float-top">
+                    <i class="fas fa-star" style="color:#FBBF24;"></i>
+                    <span><strong>4.9 / 5</strong> (1,420+ Reviews)</span>
+                </div>
+                <div class="cta-h2-float-badge float-bottom">
+                    <i class="fas fa-certificate" style="color:#34D399;"></i>
+                    <span><strong>12,500+</strong> Licenses Renewed</span>
+                </div>
             </div>
         </div>
     </div>
@@ -521,5 +841,262 @@
 <div id="main-footer"></div>
 
 <script src="components.js"></script>
+<script>
+/* ─── HOME 2 HERO SLIDER CONTROLLER (3 SLIDES, 5s TIMER) ─── */
+(function initH2HeroSlider() {
+    let currentSlide = 0;
+    const totalSlides = 3;
+    const slideDuration = 5000;
+    let slideTimer = null;
+
+    window.setH2HeroSlide = function(index) {
+        if (index < 0) index = totalSlides - 1;
+        if (index >= totalSlides) index = 0;
+
+        currentSlide = index;
+
+        const slides = document.querySelectorAll('.h2-hero-slide');
+        const dots = document.querySelectorAll('.h2-dot');
+
+        slides.forEach((slide, idx) => {
+            if (idx === currentSlide) {
+                slide.classList.add('active');
+            } else {
+                slide.classList.remove('active');
+            }
+        });
+
+        dots.forEach((dot, idx) => {
+            if (idx === currentSlide) {
+                dot.classList.add('active');
+                const prog = dot.querySelector('.dot-progress');
+                if (prog) {
+                    prog.style.transition = 'none';
+                    prog.style.width = '0%';
+                    setTimeout(() => {
+                        prog.style.transition = 'width 5s linear';
+                        prog.style.width = '100%';
+                    }, 20);
+                }
+            } else {
+                dot.classList.remove('active');
+                const prog = dot.querySelector('.dot-progress');
+                if (prog) {
+                    prog.style.transition = 'none';
+                    prog.style.width = '0%';
+                }
+            }
+        });
+
+        resetTimer();
+    };
+
+    window.moveH2HeroSlide = function(direction) {
+        setH2HeroSlide(currentSlide + direction);
+    };
+
+    function startTimer() {
+        stopTimer();
+        slideTimer = setInterval(() => {
+            setH2HeroSlide(currentSlide + 1);
+        }, slideDuration);
+    }
+
+    function stopTimer() {
+        if (slideTimer) {
+            clearInterval(slideTimer);
+            slideTimer = null;
+        }
+    }
+
+    function resetTimer() {
+        startTimer();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const sliderContainer = document.getElementById('home2-hero-slider');
+        if (sliderContainer) {
+            sliderContainer.addEventListener('mouseenter', stopTimer);
+            sliderContainer.addEventListener('mouseleave', startTimer);
+        }
+        setH2HeroSlide(0);
+    });
+})();
+
+/* ─── 3D PRISMATIC CARD TILT & CURSOR TRACKER ─── */
+(function init3DCardTilt() {
+    function setupCardTilt() {
+        const cards = document.querySelectorAll('.h2-slide-img-card');
+        cards.forEach(card => {
+            let bounds;
+            
+            function onMouseEnter(e) {
+                bounds = card.getBoundingClientRect();
+                card.style.transition = 'transform 0.12s ease-out, box-shadow 0.3s ease, border-color 0.3s ease';
+            }
+
+            function onMouseMove(e) {
+                if (!bounds) bounds = card.getBoundingClientRect();
+                const mouseX = e.clientX - bounds.left;
+                const mouseY = e.clientY - bounds.top;
+                const percentX = Math.max(0, Math.min(100, (mouseX / bounds.width) * 100));
+                const percentY = Math.max(0, Math.min(100, (mouseY / bounds.height) * 100));
+                
+                const centerX = bounds.width / 2;
+                const centerY = bounds.height / 2;
+                const rotateX = ((mouseY - centerY) / centerY) * -9; // -9 to +9 deg
+                const rotateY = ((mouseX - centerX) / centerX) * 9;  // -9 to +9 deg
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-14px) scale(1.035)`;
+                card.style.setProperty('--mouse-x', `${percentX.toFixed(1)}%`);
+                card.style.setProperty('--mouse-y', `${percentY.toFixed(1)}%`);
+            }
+
+            function onMouseLeave() {
+                card.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease, border-color 0.4s ease';
+                card.style.transform = '';
+                card.style.removeProperty('--mouse-x');
+                card.style.removeProperty('--mouse-y');
+                bounds = null;
+            }
+
+            card.addEventListener('mouseenter', onMouseEnter);
+            card.addEventListener('mousemove', onMouseMove);
+            card.addEventListener('mouseleave', onMouseLeave);
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupCardTilt);
+    } else {
+        setupCardTilt();
+    }
+})();
+
+/* ─── TESTIMONIAL SLIDER CONTROLLER ─── */
+(function initTestimonialSlider() {
+    let currentTestiSlide = 0;
+    const totalTestiSlides = 2;
+    let testiTimer = null;
+
+    window.goToTestimonialSlide = function(index) {
+        if (index < 0) index = totalTestiSlides - 1;
+        if (index >= totalTestiSlides) index = 0;
+
+        currentTestiSlide = index;
+
+        const track = document.getElementById('testimonialTrack');
+        if (track) {
+            track.style.transform = `translateX(-${currentTestiSlide * 100}%)`;
+        }
+
+        const slides = document.querySelectorAll('.testimonial-slide');
+        slides.forEach((slide, idx) => {
+            if (idx === currentTestiSlide) {
+                slide.classList.add('active');
+            } else {
+                slide.classList.remove('active');
+            }
+        });
+
+        const dots = document.querySelectorAll('.testi-dot');
+        dots.forEach((dot, idx) => {
+            if (idx === currentTestiSlide) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    };
+
+    window.moveTestimonialSlide = function(dir) {
+        goToTestimonialSlide(currentTestiSlide + dir);
+        resetTestiTimer();
+    };
+
+    function startTestiTimer() {
+        stopTestiTimer();
+        testiTimer = setInterval(() => {
+            goToTestimonialSlide(currentTestiSlide + 1);
+        }, 6000);
+    }
+
+    function stopTestiTimer() {
+        if (testiTimer) {
+            clearInterval(testiTimer);
+            testiTimer = null;
+        }
+    }
+
+    function resetTestiTimer() {
+        startTestiTimer();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const track = document.getElementById('testimonialTrack');
+        if (track) {
+            track.parentElement.addEventListener('mouseenter', stopTestiTimer);
+            track.parentElement.addEventListener('mouseleave', startTestiTimer);
+        }
+        goToTestimonialSlide(0);
+        startTestiTimer();
+    });
+})();
+
+/* ─── INTERACTIVE CALCULATOR CONTROLLER ─── */
+(function initCalculatorWidget() {
+    let baseFee = 499;
+    let speedFee = 0;
+    let baseTime = "3–5 Days";
+    let docsSummary = "2 Documents Required (Form 9 & Original DL)";
+    let title = "Driving License Renewal";
+
+    function updateCalcDisplay() {
+        const titleEl = document.getElementById('calcServiceTitle');
+        const feeEl = document.getElementById('calcFeeVal');
+        const timeEl = document.getElementById('calcTimeVal');
+        const docsEl = document.getElementById('calcDocsSummaryVal');
+
+        if (titleEl) titleEl.textContent = title;
+        if (feeEl) feeEl.innerHTML = `₹${baseFee + speedFee} <small style="font-size:0.75rem;font-weight:400;color:var(--text-muted);">+ Govt Fee</small>`;
+        if (timeEl) {
+            if (speedFee > 0) {
+                timeEl.textContent = "24–48 Hours (Express Fast-Track)";
+            } else {
+                timeEl.textContent = baseTime;
+            }
+        }
+        if (docsEl) docsEl.textContent = docsSummary;
+    }
+
+    window.selectCalcService = function(btn, serviceTitle, fee, timeStr, docsStr) {
+        const container = document.getElementById('servicePills');
+        if (container) {
+            container.querySelectorAll('.calc-pill').forEach(p => p.classList.remove('active'));
+        }
+        btn.classList.add('active');
+
+        title = serviceTitle;
+        baseFee = fee;
+        baseTime = timeStr;
+        docsSummary = docsStr;
+        updateCalcDisplay();
+    };
+
+    window.selectCalcSpeed = function(btn, extraFee, speedLabel) {
+        const container = document.getElementById('speedPills');
+        if (container) {
+            container.querySelectorAll('.calc-pill').forEach(p => p.classList.remove('active'));
+        }
+        btn.classList.add('active');
+
+        speedFee = extraFee;
+        updateCalcDisplay();
+    };
+})();
+</script>
 </body>
 </html>
+
+
+
