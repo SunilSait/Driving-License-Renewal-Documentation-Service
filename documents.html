@@ -266,31 +266,284 @@
             <div class="section-label"><i class="fas fa-lightbulb"></i> Pro Tips</div>
             <h2>Before You Submit — Important Reminders</h2>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;" class="animate-on-scroll">
-            <div class="card">
-                <div style="width:100%;height:170px;border-radius:var(--radius-md);overflow:hidden;margin-bottom:1.25rem;">
-                    <img src="assets/images/tip-self-attest.jpg" alt="Self-attesting document copy with signature and date" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+        <div class="doc-tips-grid animate-on-scroll">
+            <div class="card tip-card">
+                <div class="tip-img-wrap">
+                    <img src="assets/images/tip-self-attest.jpg" alt="Self-attesting document copy with signature and date" loading="lazy">
                 </div>
                 <h4>Always Self-Attest Copies</h4>
-                <p style="font-size:0.875rem;margin-top:0.375rem;">Sign across every photocopy with "True Copy — Self Attested" along with your full name and date.</p>
+                <p>Sign across every photocopy with "True Copy — Self Attested" along with your full name and date.</p>
             </div>
-            <div class="card">
-                <div style="width:100%;height:170px;border-radius:var(--radius-md);overflow:hidden;margin-bottom:1.25rem;">
-                    <img src="assets/images/tip-recent-photos.jpg" alt="Passport size photographs with camera gear" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+            <div class="card tip-card">
+                <div class="tip-img-wrap">
+                    <img src="assets/images/tip-recent-photos.jpg" alt="Passport size photographs with camera gear" loading="lazy">
                 </div>
                 <h4>Use Recent Photos</h4>
-                <p style="font-size:0.875rem;margin-top:0.375rem;">Photographs should be taken within the last 6 months on a white background, without glasses or headgear.</p>
+                <p>Photographs should be taken within the last 6 months on a white background, without glasses.</p>
             </div>
-            <div class="card">
-                <div style="width:100%;height:170px;border-radius:var(--radius-md);overflow:hidden;margin-bottom:1.25rem;">
-                    <img src="assets/images/tip-expiry-reminder.jpg" alt="License renewal date circled on calendar with reminder notification" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+            <div class="card tip-card">
+                <div class="tip-img-wrap">
+                    <img src="assets/images/tip-expiry-reminder.jpg" alt="License renewal date circled on calendar with reminder notification" loading="lazy">
                 </div>
                 <h4>Don't Wait for Expiry</h4>
-                <p style="font-size:0.875rem;margin-top:0.375rem;">Renew your DL or RC up to 1 year before expiry to avoid fines. We send automated reminders to our clients.</p>
+                <p>Renew your DL or RC up to 1 year before expiry to avoid fines. We send automated reminders to our clients.</p>
             </div>
         </div>
     </div>
 </section>
+
+<!-- ========== NEW SECTION 1: INTERACTIVE DOCUMENT CHECKER ========== -->
+<section class="doc-checker-section">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label"><i class="fas fa-list-check"></i> Interactive Tool</div>
+            <h2>Instant Document Readiness Checker</h2>
+            <p>Select your required service, check off the documents you currently hold, and get your instant RTO readiness score.</p>
+        </div>
+
+        <div class="doc-checker-card animate-on-scroll">
+            <div class="checker-nav">
+                <button class="checker-nav-btn active" onclick="loadCheckerService('dl', this)">DL Renewal</button>
+                <button class="checker-nav-btn" onclick="loadCheckerService('address', this)">Address Change</button>
+                <button class="checker-nav-btn" onclick="loadCheckerService('rc', this)">RC Renewal</button>
+                <button class="checker-nav-btn" onclick="loadCheckerService('idp', this)">Int'l DL Permit</button>
+            </div>
+
+            <div class="checker-items-list" id="checker-items-container">
+                <!-- Populated via JS -->
+            </div>
+
+            <div class="checker-status-box">
+                <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">
+                    <span style="font-weight:700;color:var(--text-heading);">Application Readiness Score:</span>
+                    <span id="checker-score-text" style="font-weight:800;color:var(--primary);font-size:1.2rem;">0% (0 / 5 Ready)</span>
+                </div>
+                <div class="checker-progress-bar">
+                    <div class="checker-progress-fill" id="checker-progress-bar-fill"></div>
+                </div>
+                <div id="checker-action-note" style="font-size:0.92rem;color:var(--text-body);margin-top:0.75rem;">
+                    Check all required items to achieve 100% readiness score.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== NEW SECTION 2: OFFICIAL RTO FORM LIBRARY ========== -->
+<section class="doc-forms-repo-section">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label"><i class="fas fa-file-pdf"></i> Form Center</div>
+            <h2>Official RTO Downloadable Form Repository</h2>
+            <p>Download official government-formatted RTO PDF forms ready for printing and signature attestation.</p>
+        </div>
+
+        <div class="forms-repo-grid animate-on-scroll">
+            <div class="form-repo-card">
+                <div>
+                    <div class="form-repo-header">
+                        <div class="form-icon-wrap"><i class="fas fa-file-medical"></i></div>
+                        <div class="form-repo-info">
+                            <h4>Form 1</h4>
+                            <span class="form-repo-badge">Medical Self-Declaration</span>
+                        </div>
+                    </div>
+                    <p class="form-repo-desc">Self-declaration certificate of physical fitness required for non-transport vehicle licenses.</p>
+                </div>
+                <div class="form-repo-footer">
+                    <span class="form-file-size"><i class="fas fa-file-pdf"></i> PDF (145 KB)</span>
+                    <button class="btn btn-secondary btn-sm" onclick="alert('Downloading Official RTO Form 1 PDF...')">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-repo-card">
+                <div>
+                    <div class="form-repo-header">
+                        <div class="form-icon-wrap"><i class="fas fa-user-doctor"></i></div>
+                        <div class="form-repo-info">
+                            <h4>Form 1-A</h4>
+                            <span class="form-repo-badge">Doctor Medical Fitness</span>
+                        </div>
+                    </div>
+                    <p class="form-repo-desc">Official medical certificate to be attested by a registered medical practitioner for applicants.</p>
+                </div>
+                <div class="form-repo-footer">
+                    <span class="form-file-size"><i class="fas fa-file-pdf"></i> PDF (180 KB)</span>
+                    <button class="btn btn-secondary btn-sm" onclick="alert('Downloading Official RTO Form 1-A PDF...')">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-repo-card">
+                <div>
+                    <div class="form-repo-header">
+                        <div class="form-icon-wrap"><i class="fas fa-rotate"></i></div>
+                        <div class="form-repo-info">
+                            <h4>Form 9</h4>
+                            <span class="form-repo-badge">DL Renewal Application</span>
+                        </div>
+                    </div>
+                    <p class="form-repo-desc">Standard government application form for renewal of expired or expiring driving license.</p>
+                </div>
+                <div class="form-repo-footer">
+                    <span class="form-file-size"><i class="fas fa-file-pdf"></i> PDF (195 KB)</span>
+                    <button class="btn btn-secondary btn-sm" onclick="alert('Downloading Official RTO Form 9 PDF...')">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-repo-card">
+                <div>
+                    <div class="form-repo-header">
+                        <div class="form-icon-wrap"><i class="fas fa-earth-americas"></i></div>
+                        <div class="form-repo-info">
+                            <h4>Form 4-A</h4>
+                            <span class="form-repo-badge">IDP Application Form</span>
+                        </div>
+                    </div>
+                    <p class="form-repo-desc">Application form for grant of International Driving Permit (IDP) to drive vehicles abroad.</p>
+                </div>
+                <div class="form-repo-footer">
+                    <span class="form-file-size"><i class="fas fa-file-pdf"></i> PDF (210 KB)</span>
+                    <button class="btn btn-secondary btn-sm" onclick="alert('Downloading Official RTO Form 4-A PDF...')">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-repo-card">
+                <div>
+                    <div class="form-repo-header">
+                        <div class="form-icon-wrap"><i class="fas fa-car"></i></div>
+                        <div class="form-repo-info">
+                            <h4>Form 25</h4>
+                            <span class="form-repo-badge">RC Renewal Application</span>
+                        </div>
+                    </div>
+                    <p class="form-repo-desc">Application for renewal of vehicle registration certificate after completion of initial 15-year.</p>
+                </div>
+                <div class="form-repo-footer">
+                    <span class="form-file-size"><i class="fas fa-file-pdf"></i> PDF (220 KB)</span>
+                    <button class="btn btn-secondary btn-sm" onclick="alert('Downloading Official RTO Form 25 PDF...')">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-repo-card">
+                <div>
+                    <div class="form-repo-header">
+                        <div class="form-icon-wrap"><i class="fas fa-location-dot"></i></div>
+                        <div class="form-repo-info">
+                            <h4>Form 33</h4>
+                            <span class="form-repo-badge">Address Change Notice</span>
+                        </div>
+                    </div>
+                    <p class="form-repo-desc">Intimation of change of residence address to be recorded in vehicle registration and DL.</p>
+                </div>
+                <div class="form-repo-footer">
+                    <span class="form-file-size"><i class="fas fa-file-pdf"></i> PDF (165 KB)</span>
+                    <button class="btn btn-secondary btn-sm" onclick="alert('Downloading Official RTO Form 33 PDF...')">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+const checkerData = {
+    dl: [
+        'Original Driving License (Current/Expired)',
+        'Aadhaar Card (Original + Photocopy)',
+        'Form 9 DL Renewal Application Form',
+        'Form 1 / Form 1-A Medical Fitness Certificate',
+        '2 Passport-size Photographs (White background)'
+    ],
+    address: [
+        'Original Driving License',
+        'New Address Proof (Aadhaar / Passport / Utility Bill)',
+        'Form 33 Address Change Notice',
+        'Rental Agreement or NOC (If residing in rented home)'
+    ],
+    rc: [
+        'Original Vehicle Registration Certificate (RC)',
+        'Valid Vehicle Insurance Certificate',
+        'Valid PUC (Pollution Under Control) Certificate',
+        'Form 25 RC Renewal Application',
+        'Owner Aadhaar Card copy'
+    ],
+    idp: [
+        'Valid Original Indian Driving License',
+        'Valid Passport (with at least 1 year validity)',
+        'Valid Destination Country Visa copy',
+        'Form 4-A International Driving Permit Form',
+        '4 Passport-size Photographs'
+    ]
+};
+
+function loadCheckerService(key, btnEl) {
+    if (btnEl) {
+        document.querySelectorAll('.checker-nav-btn').forEach(b => b.classList.remove('active'));
+        btnEl.classList.add('active');
+    }
+    const container = document.getElementById('checker-items-container');
+    const items = checkerData[key] || checkerData.dl;
+    container.innerHTML = items.map((text, idx) => `
+        <label class="checker-item">
+            <input type="checkbox" class="checker-checkbox" onchange="calcDocReadiness()" />
+            <span class="checker-item-label">${text}</span>
+            <i class="fas fa-check-circle" style="color:#CBD5E1;"></i>
+        </label>
+    `).join('');
+    calcDocReadiness();
+}
+
+function calcDocReadiness() {
+    const checkboxes = document.querySelectorAll('#checker-items-container .checker-checkbox');
+    const total = checkboxes.length;
+    let checked = 0;
+    checkboxes.forEach((cb) => {
+        const item = cb.closest('.checker-item');
+        const icon = item.querySelector('i');
+        if (cb.checked) {
+            checked++;
+            item.style.borderColor = '#10B981';
+            item.style.background = 'rgba(16, 185, 129, 0.08)';
+            if (icon) icon.style.color = '#10B981';
+        } else {
+            item.style.borderColor = '';
+            item.style.background = '';
+            if (icon) icon.style.color = '#CBD5E1';
+        }
+    });
+
+    const percent = total > 0 ? Math.round((checked / total) * 100) : 0;
+    const scoreText = document.getElementById('checker-score-text');
+    const fill = document.getElementById('checker-progress-bar-fill');
+    const note = document.getElementById('checker-action-note');
+
+    if (scoreText) scoreText.textContent = `${percent}% (${checked} / ${total} Ready)`;
+    if (fill) fill.style.width = `${percent}%`;
+
+    if (note) {
+        if (percent === 100) {
+            note.innerHTML = `<span style="color:#10B981;font-weight:700;"><i class="fas fa-circle-check"></i> Perfect! Your documents are 100% ready for RTO submission.</span> <a href="contact.html" class="btn btn-primary btn-sm" style="margin-left:0.5rem;padding:0.35rem 0.85rem;">Book Appointment Now</a>`;
+        } else {
+            note.textContent = `Check all required items to achieve 100% readiness score. Missing ${total - checked} document(s).`;
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadCheckerService('dl');
+});
+</script>
 
 <!-- ========== CTA ========== -->
 <section class="cta-section">

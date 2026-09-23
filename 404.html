@@ -3,35 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Page not found — DriveSure Driving License & Documentation Service. Return to our homepage.">
+    <meta name="description" content="Page not found — DriveSure License & Documentation Service. Return to our homepage.">
     <title>404 — Page Not Found | DriveSure</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100dvh;
-        }
-    </style>
 </head>
 <body class="fullscreen-page">
 
-<!-- Top controls -->
-<div class="auth-topbar" style="position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem;z-index:100;">
-    <!-- Logo top-left links to home -->
+<div class="fullscreen-topbar">
     <a href="index.html" class="nav-logo" aria-label="DriveSure Home">
-        <img src="logo.svg" alt="DriveSure Logo" width="36" height="36" class="nav-logo-img">
+        <img src="logo.svg" alt="DriveSure Logo" width="38" height="38" style="width:38px;height:38px;object-fit:contain;display:block;">
         <div class="nav-logo-text">
             <span class="brand-top">DriveSure</span>
             <span class="brand-bottom">License & Documentation</span>
         </div>
     </a>
-    <!-- Theme / RTL -->
     <div style="display:flex;gap:0.5rem;">
-        <button onclick="toggleDir()" class="auth-toggle-btn" title="Toggle Direction" aria-label="Toggle RTL/LTR">
-            <span class="dir-label" style="font-size:0.6rem;font-weight:700;">LTR</span>
+        <button onclick="toggleDir()" class="auth-toggle-btn" title="Toggle Direction">
+            <span class="dir-label" style="font-size:0.625rem;font-weight:600;">LTR</span>
         </button>
         <button onclick="toggleTheme()" class="auth-toggle-btn" title="Toggle Theme" aria-label="Toggle dark mode">
             <i class="fas fa-moon theme-icon"></i>
@@ -39,46 +29,51 @@
     </div>
 </div>
 
-<!-- 404 Content -->
-<main class="page-404">
-    <div class="page-404-content">
-        <!-- Large background number -->
-        <span class="error-code" aria-hidden="true">404</span>
+<div class="fullscreen-content">
+    <div style="position:relative;max-width:560px;width:100%;margin:0 auto;z-index:1;padding-top:1rem;">
+        <!-- Background vector seal decoration -->
+        <svg class="gear-bg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="92" stroke="var(--primary)" stroke-width="3" stroke-dasharray="8 4"/>
+            <circle cx="100" cy="100" r="82" stroke="var(--primary)" stroke-width="2"/>
+            <circle cx="100" cy="100" r="72" stroke="var(--primary)" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <line x1="100" y1="28" x2="100" y2="172" stroke="var(--primary)" stroke-width="2"/>
+            <line x1="28" y1="100" x2="172" y2="100" stroke="var(--primary)" stroke-width="2"/>
+            <line x1="49" y1="49" x2="151" y2="151" stroke="var(--primary)" stroke-width="1.5"/>
+            <line x1="151" y1="49" x2="49" y2="151" stroke="var(--primary)" stroke-width="1.5"/>
+            <circle cx="100" cy="100" r="28" stroke="var(--primary)" stroke-width="2" fill="none"/>
+            <circle cx="100" cy="100" r="14" stroke="var(--primary)" stroke-width="2"/>
+            <circle cx="100" cy="100" r="5" fill="var(--primary)"/>
+        </svg>
 
-        <div class="error-icon">
-            <i class="fas fa-map-location-dot"></i>
+        <div style="position:relative;display:block;width:100%;text-align:center;margin-bottom:3.5rem;z-index:2;">
+            <div class="error-code">404</div>
         </div>
 
-        <h1>Oops! Page Not Found</h1>
-        <p>The page you're looking for seems to have taken a wrong turn. It may have been moved, deleted, or the URL might be incorrect.</p>
-
-        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem;">
-            <a href="index.html" class="btn btn-primary btn-lg">
-                <i class="fas fa-home"></i> Go to Homepage
-            </a>
-            <a href="contact.html" class="btn btn-secondary btn-lg">
-                Contact Us
-            </a>
+        <div style="position:relative;z-index:2;margin-bottom:1.75rem;margin-top:1.5rem;">
+            <div style="width:60px;height:60px;border-radius:50%;background:var(--primary-subtle);border:1px solid var(--primary-glow);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;" class="wheel-spin">
+                <i class="fas fa-id-card" style="font-size:1.625rem;color:var(--primary);"></i>
+            </div>
+            <div class="error-subtitle">Page Not Found</div>
+            <p class="error-desc">The route you're following doesn't exist. This page may have been moved, updated, or deleted. Let's get you back on track.</p>
         </div>
 
-        <!-- Quick Nav -->
-        <div style="border-top:1px solid var(--border-default);padding-top:1.5rem;margin-top:0.5rem;">
-            <p style="font-size:0.875rem;color:var(--text-muted);margin-bottom:1rem;">Or visit one of these pages:</p>
-            <div style="display:flex;gap:0.625rem;justify-content:center;flex-wrap:wrap;">
-                <a href="services.html" class="btn btn-ghost btn-sm"><i class="fas fa-layer-group"></i> Services</a>
-                <a href="documents.html" class="btn btn-ghost btn-sm"><i class="fas fa-file-alt"></i> Documents</a>
-                <a href="fees.html" class="btn btn-ghost btn-sm"><i class="fas fa-tag"></i> Fees</a>
-                <a href="login.html" class="btn btn-ghost btn-sm"><i class="fas fa-sign-in-alt"></i> Login</a>
+        <div style="display:flex;gap:0.875rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:2;margin-bottom:2.5rem;">
+            <a href="index.html" class="btn btn-primary btn-lg"><i class="fas fa-home"></i> Back to Home</a>
+            <a href="contact.html" class="btn btn-secondary btn-lg">Contact Support</a>
+        </div>
+
+        <div style="padding:1.5rem;background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-2xl);position:relative;z-index:2;">
+            <p style="font-family:var(--font-heading);font-weight:600;font-size:0.875rem;color:var(--text-heading);margin-bottom:1rem;">You might be looking for:</p>
+            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;">
+                <a href="services.html" class="badge badge-outline" style="padding:0.5rem 1rem;font-size:0.8125rem;border-radius:var(--radius-full);cursor:pointer;">Our Services</a>
+                <a href="documents.html" class="badge badge-outline" style="padding:0.5rem 1rem;font-size:0.8125rem;border-radius:var(--radius-full);cursor:pointer;">Document Checklists</a>
+                <a href="fees.html" class="badge badge-outline" style="padding:0.5rem 1rem;font-size:0.8125rem;border-radius:var(--radius-full);cursor:pointer;">Fees & Time</a>
+                <a href="contact.html" class="badge badge-outline" style="padding:0.5rem 1rem;font-size:0.8125rem;border-radius:var(--radius-full);cursor:pointer;">Book Appointment</a>
             </div>
         </div>
     </div>
-</main>
+</div>
 
 <script src="components.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        initAuthPage();
-    });
-</script>
 </body>
 </html>

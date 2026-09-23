@@ -108,25 +108,36 @@ function injectNav() {
                 <button onclick="toggleTheme()" class="nav-icon-btn" title="Toggle Theme" aria-label="Toggle dark mode">
                     <i class="${isDark ? 'fas fa-sun theme-icon' : 'fas fa-moon theme-icon'}"></i>
                 </button>
-                <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
-                <a href="contact.html" class="btn btn-primary btn-sm">Book Now</a>
-                <button class="mobile-menu-btn" id="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Open menu">
-                    <i class="fas fa-bars mobile-menu-icon"></i>
+                <a href="login.html" class="btn btn-primary btn-sm nav-btn-cta">Login</a>
+                <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileDrawer()">
+                    <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
+    </nav>
 
-        <!-- Mobile Backdrop -->
-        <div class="mobile-backdrop" id="mobile-backdrop" onclick="toggleMobileMenu()"></div>
+    <!-- Mobile Navigation Drawer Overlay -->
+    <div class="mobile-drawer-overlay" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+        <div class="mobile-drawer-header">
+            <a href="index.html" class="nav-logo" aria-label="DriveSure Home" onclick="closeMobileDrawer()">
+                ${getLogoHTML(36)}
+                <div class="nav-logo-text">
+                    <span class="brand-top">DriveSure</span>
+                    <span class="brand-bottom">License & Documentation</span>
+                </div>
+            </a>
+            <button class="mobile-drawer-close" id="mobile-drawer-close" onclick="closeMobileDrawer()" aria-label="Close menu">
+                <i class="fas fa-xmark"></i>
+            </button>
+        </div>
 
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile Navigation">
+        <div class="mobile-drawer-body">
             ${mobileLinksHTML}
-            <div class="mob-actions">
-                <a href="login.html" class="btn btn-secondary w-full">Login</a>
-                <a href="contact.html" class="btn btn-primary w-full">Book Appointment</a>
-            </div>
-            <div class="mob-toggles">
+        </div>
+
+        <div class="mobile-drawer-footer">
+            <a href="login.html" class="btn btn-primary btn-full" onclick="closeMobileDrawer()"><i class="fas fa-user"></i> Login</a>
+            <div class="mobile-drawer-controls">
                 <button onclick="toggleDir()" class="nav-icon-btn" title="Toggle Direction">
                     <span class="dir-label">${isRTL ? 'RTL' : 'LTR'}</span>
                 </button>
@@ -135,41 +146,43 @@ function injectNav() {
                 </button>
             </div>
         </div>
-    </nav>
+    </div>
     <div class="navbar-spacer"></div>`;
 }
 
-/* ─── MOBILE MENU TOGGLE ────────────────────────────────────── */
-function toggleMobileMenu() {
-    const menu = document.getElementById('mobile-menu');
-    const backdrop = document.getElementById('mobile-backdrop');
-    const icon = document.querySelector('.mobile-menu-icon');
-    if (!menu) return;
-
-    const isOpen = menu.classList.contains('open');
-    if (isOpen) {
-        menu.classList.remove('open');
-        if (backdrop) backdrop.classList.remove('open');
-        if (icon) { icon.className = 'fas fa-bars mobile-menu-icon'; }
-    } else {
-        menu.classList.add('open');
-        if (backdrop) backdrop.classList.add('open');
-        if (icon) { icon.className = 'fas fa-xmark mobile-menu-icon'; }
+/* ─── MOBILE DRAWER TOGGLES ──────────────────────────────────── */
+function openMobileDrawer() {
+    const drawer = document.getElementById('mobile-drawer');
+    const hamburger = document.getElementById('hamburger-btn');
+    if (!drawer) return;
+    drawer.classList.add('open');
+    if (hamburger) {
+        hamburger.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
     }
+    document.body.style.overflow = 'hidden';
 }
 
-/* Close mobile menu on outside click */
-document.addEventListener('click', function(e) {
-    const menu = document.getElementById('mobile-menu');
-    const backdrop = document.getElementById('mobile-backdrop');
-    const btn = document.getElementById('mobile-menu-toggle');
-    if (menu && menu.classList.contains('open') && !menu.contains(e.target) && btn && !btn.contains(e.target)) {
-        menu.classList.remove('open');
-        if (backdrop) backdrop.classList.remove('open');
-        const icon = document.querySelector('.mobile-menu-icon');
-        if (icon) icon.className = 'fas fa-bars mobile-menu-icon';
+function closeMobileDrawer() {
+    const drawer = document.getElementById('mobile-drawer');
+    const hamburger = document.getElementById('hamburger-btn');
+    if (!drawer) return;
+    drawer.classList.remove('open');
+    if (hamburger) {
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
     }
-});
+    document.body.style.overflow = '';
+}
+
+function toggleMobileDrawer() {
+    const drawer = document.getElementById('mobile-drawer');
+    if (drawer && drawer.classList.contains('open')) {
+        closeMobileDrawer();
+    } else {
+        openMobileDrawer();
+    }
+}
 
 /* ─── INJECT FOOTER ─────────────────────────────────────────── */
 function injectFooter() {

@@ -24,10 +24,14 @@
             border-radius: var(--radius-3xl);
             overflow: hidden;
             position: relative;
+            height: 100%;
+            min-height: 460px;
+            display: flex;
         }
         .doc-preview-img img {
             width: 100%;
-            height: 400px;
+            height: 100%;
+            min-height: 460px;
             object-fit: cover;
         }
         .doc-preview-badge {
@@ -298,17 +302,23 @@
 
         <div class="features-grid">
             <div class="feature-card animate-on-scroll">
-                <div class="feature-icon"><i class="fas fa-truck-fast"></i></div>
+                <div style="width:100%;height:170px;border-radius:var(--radius-md);overflow:hidden;margin-bottom:1.25rem;">
+                    <img src="assets/images/home2-feature-doorstep.jpg" alt="Doorstep delivery of renewed driving license envelope" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                </div>
                 <h4>Doorstep Delivery</h4>
                 <p>Your renewed documents are dispatched via speed post directly to your registered address.</p>
             </div>
             <div class="feature-card animate-on-scroll animate-delay-1">
-                <div class="feature-icon"><i class="fas fa-message"></i></div>
+                <div style="width:100%;height:170px;border-radius:var(--radius-md);overflow:hidden;margin-bottom:1.25rem;">
+                    <img src="assets/images/home2-feature-tracking.jpg" alt="Live mobile shipment status tracking timeline" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                </div>
                 <h4>Live Status Updates</h4>
                 <p>Track your application in real-time with SMS and email notifications at each milestone.</p>
             </div>
             <div class="feature-card animate-on-scroll animate-delay-2">
-                <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                <div style="width:100%;height:170px;border-radius:var(--radius-md);overflow:hidden;margin-bottom:1.25rem;">
+                    <img src="assets/images/home2-feature-support.jpg" alt="Dedicated documentation agent support" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                </div>
                 <h4>Dedicated Support</h4>
                 <p>Your personal agent is just a call away throughout the entire documentation journey.</p>
             </div>
@@ -409,8 +419,8 @@
                     <div class="idp-badge-item">
                         <i class="fas fa-bolt"></i>
                         <div>
-                            <strong>48-Hour Turnaround</strong>
-                            <span>Express Processing</span>
+                            <strong>48-Hour </strong>
+                            <span>Express Processing Service</span>
                         </div>
                     </div>
                     <div class="idp-badge-item">
@@ -455,6 +465,13 @@
 
         <div class="calc-wrapper animate-on-scroll">
             <div class="calc-options-group">
+                <div class="calc-options-header">
+                    <div class="calc-badge-label">
+                        <i class="fas fa-sliders"></i> Customized Fee Estimator
+                    </div>
+                    <h3 class="calc-header-title">Configure Options Below</h3>
+                </div>
+
                 <div>
                     <div class="calc-group-title">1. Select Service Type</div>
                     <div class="calc-pills" id="calc-service-pills">
@@ -481,6 +498,8 @@
                         <button class="calc-pill" onclick="updateExpiryStatus('grace', this)"><i class="fas fa-circle-exclamation"></i> Expired &gt; 1 Year (+ Grace Fee)</button>
                     </div>
                 </div>
+
+               
             </div>
 
             <div class="calc-result-card">
@@ -586,6 +605,13 @@
         <div class="calc-box-grid animate-on-scroll">
             <!-- Left: Options Selector -->
             <div class="calc-options-card">
+                <div class="calc-options-header" style="margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px dashed var(--border-default);">
+                    <div class="calc-badge-label" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.75rem;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.35rem;">
+                        <i class="fas fa-sliders"></i> Service Calculator
+                    </div>
+                    <h3 style="font-size:1.35rem;font-weight:700;color:var(--text-heading);margin:0;">Configure Your Service Options</h3>
+                </div>
+
                 <div class="calc-field-group">
                     <label class="calc-label"><i class="fas fa-list-check"></i> Select Required Service:</label>
                     <div class="calc-pills-group" id="servicePills">

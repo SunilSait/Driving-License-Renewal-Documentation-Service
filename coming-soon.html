@@ -3,141 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DriveSure is launching a new feature soon. Subscribe to get notified when we go live.">
+    <meta name="description" content="Something exciting is coming soon to DriveSure — new RTO automation features, doorstep document tools, and service tracking. Stay tuned!">
     <title>Coming Soon | DriveSure License & Documentation</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <style>
-        body { margin: 0; padding: 0; }
-    </style>
 </head>
 <body class="fullscreen-page">
 
-<main class="page-coming-soon">
-
-    <!-- Top bar: logo + toggles -->
-    <div class="coming-soon-topbar">
-        <a href="index.html" class="nav-logo" aria-label="DriveSure Home">
-            <img src="logo.svg" alt="DriveSure Logo" width="38" height="38" class="nav-logo-img">
-            <div class="nav-logo-text">
-                <span class="brand-top" style="color:#fff;">DriveSure</span>
-                <span class="brand-bottom" style="color:rgba(255,255,255,0.6);">License & Documentation</span>
-            </div>
-        </a>
-        <div class="coming-soon-toggles">
-            <button onclick="toggleDir()" class="cs-toggle-btn" title="Toggle Direction" aria-label="Toggle RTL/LTR">
-                <span class="dir-label" style="font-size:0.6rem;font-weight:700;">LTR</span>
-            </button>
-            <button onclick="toggleTheme()" class="cs-toggle-btn" title="Toggle Theme" aria-label="Toggle dark mode">
-                <i class="fas fa-moon theme-icon"></i>
-            </button>
+<div class="fullscreen-topbar">
+    <a href="index.html" class="nav-logo" aria-label="DriveSure Home">
+        <img src="logo.svg" alt="DriveSure Logo" width="38" height="38" style="width:38px;height:38px;object-fit:contain;display:block;">
+        <div class="nav-logo-text">
+            <span class="brand-top">DriveSure</span>
+            <span class="brand-bottom">License & Documentation</span>
         </div>
+    </a>
+    <div style="display:flex;gap:0.5rem;">
+        <button onclick="toggleDir()" class="auth-toggle-btn" title="Toggle Direction">
+            <span class="dir-label" style="font-size:0.625rem;font-weight:600;">LTR</span>
+        </button>
+        <button onclick="toggleTheme()" class="auth-toggle-btn" title="Toggle Theme" aria-label="Toggle dark mode">
+            <i class="fas fa-moon theme-icon"></i>
+        </button>
     </div>
+</div>
 
-    <!-- Content -->
-    <div class="coming-soon-content">
-        <!-- Icon -->
-        <div style="width:56px;height:56px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);border-radius:var(--radius-2xl);display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem;">
-            <i class="fas fa-rocket" style="font-size:1.5rem;color:#93C5FD;"></i>
+<div class="fullscreen-content">
+    <div style="max-width:600px;width:100%;margin:0 auto;">
+        <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--secondary));display:flex;align-items:center;justify-content:center;margin:0 auto 1.75rem;animation:float 3s ease-in-out infinite;box-shadow:var(--shadow-lg);">
+            <i class="fas fa-id-card" style="font-size:2rem;color:#fff;"></i>
         </div>
 
-        <div class="section-label section-label-on-dark" style="margin-bottom:0.75rem;">
-            <i class="fas fa-wrench"></i> Under Development
-        </div>
-
-        <h1>Something Exciting<br>is Coming Soon</h1>
-        <p>We're working hard to bring you a new feature that will make your driving license and documentation experience even smoother. Stay tuned!</p>
+        <h1 style="font-size:clamp(1.75rem,4vw,2.5rem);margin-bottom:0.75rem;">Something Exciting is Coming</h1>
+        <p style="font-size:1.0625rem;color:var(--text-muted);max-width:480px;margin:0 auto 2rem;line-height:1.7;">We're working on automated RTO document tracking, instant slot booking, and smart license management tools. Stay tuned!</p>
 
         <!-- Countdown -->
-        <div class="countdown-row">
-            <div class="countdown-box">
-                <span class="countdown-num" id="cd-days">00</span>
-                <span class="countdown-label">Days</span>
+        <div class="countdown-grid" id="countdown">
+            <div class="countdown-item">
+                <div class="countdown-value" id="cd-days">12</div>
+                <div class="countdown-label">Days</div>
             </div>
-            <div class="countdown-box">
-                <span class="countdown-num" id="cd-hours">00</span>
-                <span class="countdown-label">Hours</span>
+            <div class="countdown-item">
+                <div class="countdown-value" id="cd-hours">08</div>
+                <div class="countdown-label">Hours</div>
             </div>
-            <div class="countdown-box">
-                <span class="countdown-num" id="cd-mins">00</span>
-                <span class="countdown-label">Minutes</span>
+            <div class="countdown-item">
+                <div class="countdown-value" id="cd-mins">45</div>
+                <div class="countdown-label">Minutes</div>
             </div>
-            <div class="countdown-box">
-                <span class="countdown-num" id="cd-secs">00</span>
-                <span class="countdown-label">Seconds</span>
+            <div class="countdown-item">
+                <div class="countdown-value" id="cd-secs">30</div>
+                <div class="countdown-label">Seconds</div>
             </div>
         </div>
 
-        <!-- Notify form -->
-        <form class="cs-notify-form" onsubmit="handleNotify(event)">
-            <input type="email" class="cs-notify-input" placeholder="your@email.com" required aria-label="Email address">
-            <button type="submit" class="btn btn-primary btn-lg">
-                <i class="fas fa-bell"></i> Notify Me
-            </button>
+        <div class="progress-bar-wrapper">
+            <div class="progress-bar-bg"><div class="progress-bar-fill"></div></div>
+            <p style="text-align:center;font-size:0.75rem;color:var(--text-muted);margin-top:0.5rem;font-weight:600;">72% Complete</p>
+        </div>
+
+        <!-- Notify Form -->
+        <form onsubmit="event.preventDefault(); alert('You\'re on the VIP list! We\'ll notify you as soon as we launch.'); this.reset();" class="cs-notify-form-wrapper">
+            <input type="email" class="form-input" placeholder="Enter your email address" required>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-bell"></i> Notify Me</button>
         </form>
 
-        <!-- Back link -->
-        <div style="margin-top:0.875rem;">
-            <a href="index.html" style="color:rgba(255,255,255,0.7);font-size:0.875rem;display:inline-flex;align-items:center;gap:0.375rem;transition:color 0.2s;text-decoration:none;" onmouseover="this.style.color='var(--secondary)'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">
-                <i class="fas fa-arrow-left"></i> Back to Homepage
-            </a>
-        </div>
-
-        <!-- Social links -->
-        <div style="display:flex;justify-content:center;gap:0.75rem;margin-top:0.75rem;">
-            <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="footer-social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="#" class="footer-social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <div style="display:flex;gap:0.875rem;justify-content:center;flex-wrap:wrap;">
+            <a href="index.html" class="btn btn-secondary btn-sm"><i class="fas fa-home"></i> Back to Home</a>
+            <a href="services.html" class="btn btn-outline btn-sm"><i class="fas fa-layer-group"></i> Browse Services</a>
         </div>
     </div>
-</main>
+</div>
 
 <script src="components.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        initAuthPage();
+document.addEventListener('DOMContentLoaded', function() {
+    // Countdown timer (demo: 12 days from now)
+    const launchDate = new Date();
+    launchDate.setDate(launchDate.getDate() + 12);
+    launchDate.setHours(launchDate.getHours() + 8);
 
-        // Set countdown target: 60 days from now
-        const target = new Date();
-        target.setDate(target.getDate() + 60);
-        initCountdown(target.getTime());
-    });
-
-    function handleNotify(e) {
-        e.preventDefault();
-        const input = e.target.querySelector('input');
-        alert('Thank you! We\'ll notify you at ' + input.value + ' when we launch.');
-        input.value = '';
+    function updateCountdown() {
+        const now = new Date();
+        const diff = launchDate - now;
+        if (diff <= 0) return;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diff % (1000 * 60)) / 1000);
+        document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+        document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+        document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
     }
-
-    // Override initCountdown for this page's specific elements
-    function initCountdown(targetDate) {
-        function update() {
-            const now = Date.now();
-            const diff = targetDate - now;
-            if (diff <= 0) return;
-
-            const pad = n => String(n).padStart(2, '0');
-            const days = Math.floor(diff / 86400000);
-            const hours = Math.floor((diff % 86400000) / 3600000);
-            const mins = Math.floor((diff % 3600000) / 60000);
-            const secs = Math.floor((diff % 60000) / 1000);
-
-            const dEl = document.getElementById('cd-days');
-            const hEl = document.getElementById('cd-hours');
-            const mEl = document.getElementById('cd-mins');
-            const sEl = document.getElementById('cd-secs');
-
-            if (dEl) dEl.textContent = pad(days);
-            if (hEl) hEl.textContent = pad(hours);
-            if (mEl) mEl.textContent = pad(mins);
-            if (sEl) sEl.textContent = pad(secs);
-        }
-        update();
-        setInterval(update, 1000);
-    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+});
 </script>
 </body>
 </html>
