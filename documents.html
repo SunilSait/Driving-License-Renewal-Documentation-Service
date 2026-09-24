@@ -315,8 +315,8 @@
 
             <div class="checker-status-box">
                 <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">
-                    <span style="font-weight:700;color:var(--text-heading);">Application Readiness Score:</span>
-                    <span id="checker-score-text" style="font-weight:800;color:var(--primary);font-size:1.2rem;">0% (0 / 5 Ready)</span>
+                    <span style="font-weight:600;color:var(--text-heading);">Application Readiness Score:</span>
+                    <span id="checker-score-text" style="font-weight:600;color:var(--primary);font-size:1.2rem;">0% (0 / 5 Ready)</span>
                 </div>
                 <div class="checker-progress-bar">
                     <div class="checker-progress-fill" id="checker-progress-bar-fill"></div>
@@ -533,7 +533,7 @@ function calcDocReadiness() {
 
     if (note) {
         if (percent === 100) {
-            note.innerHTML = `<span style="color:#10B981;font-weight:700;"><i class="fas fa-circle-check"></i> Perfect! Your documents are 100% ready for RTO submission.</span> <a href="contact.html" class="btn btn-primary btn-sm" style="margin-left:0.5rem;padding:0.35rem 0.85rem;">Book Appointment Now</a>`;
+            note.innerHTML = `<span style="color:#10B981;font-weight:600;"><i class="fas fa-circle-check"></i> Perfect! Your documents are 100% ready for RTO submission.</span> <a href="contact.html" class="btn btn-primary btn-sm" style="margin-left:0.5rem;padding:0.35rem 0.85rem;">Book Appointment Now</a>`;
         } else {
             note.textContent = `Check all required items to achieve 100% readiness score. Missing ${total - checked} document(s).`;
         }
