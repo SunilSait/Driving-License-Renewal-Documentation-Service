@@ -91,9 +91,10 @@
         .auth-panel-right {
             flex: 1;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
+            padding: 4.5rem 1.5rem 2.5rem;
             position: relative;
         }
         @media (max-width: 768px) {
@@ -126,7 +127,7 @@
 
             <!-- Logo -->
             <a href="index.html" class="auth-logo" aria-label="DriveSure Home">
-                <img src="logo.svg" alt="DriveSure Logo" width="44" height="44">
+                <img src="logo.svg" alt="DriveSure Logo" width="52" height="52">
                 <div class="auth-logo-text">
                     <span class="brand-top">DriveSure</span>
                     <span class="brand-bottom">License & Documentation</span>
@@ -179,12 +180,12 @@
                         </button>
                     </div>
                 </div>
-                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:0.5rem;">
+                <div class="form-options-row">
                     <div class="checkbox-wrapper">
                         <input type="checkbox" id="remember-me">
                         <label for="remember-me">Remember Me</label>
                     </div>
-                    <a href="#" class="link-primary">Forgot Password?</a>
+                    <a href="#" class="link-primary"><bdi>Forgot Password?</bdi></a>
                 </div>
                 <button type="submit" class="btn btn-primary w-full btn-lg">Sign In</button>
             </form>
